@@ -1,0 +1,159 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+}
+
+.menu {
+    display: none;
+}
+
+.logo {
+    width: 6.25rem;
+}
+
+.nav-bar-right ul,
+.nav-bar-left ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 3.75rem;
+
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1.6rem;
+    border-bottom: 1px solid #C7C7C7;
+}
+
+.nav-bar-left {
+    display: flex;
+}
+
+.nav-bar-left ul {
+    margin-left: 0.5rem;
+}
+
+.nav-bar-left ul li a,
+.nav-bar-right ul li a {
+    text-decoration: none;
+    color: #C7C7C7;
+    border: 1px solid #FFFFFF;
+    padding: 8px;
+    border-radius: 8px;
+}
+
+.nav-bar-left ul li a:hover,
+.nav-bar-right ul li a:hover {
+    color: #884939;
+    border: 1px solid #884939;
+}
+
+.navbar-inicio-sesion {
+    color: #C7C7C7;
+    font-size: 0.8rem;
+    margin-right: 12px;
+}
+
+.carrito {
+    position: relative;
+}
+
+.carrito div {
+    width: 16px;
+    height: 16px;
+    background-color: #884939;
+    border-radius: 50%;
+    font-size: 0.8rem;
+    font-weight: bold;
+    position: absolute;
+    top: -6px;
+    right: -3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #FFFFFF;
+    font-size: 0.6rem;
+}
+
+
+.local {
+    text-align: center;
+    padding: 20px;
+    display: grid; 
+    flex-direction: column;
+    
+}
+
+.titulo-loc{
+     color:#884939;
+     text-align: left;
+     margin-bottom: 10px;
+}
+
+.info-local {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.info-local img {
+    max-width: 100%;
+    height: auto;
+    margin-right: 20px;
+    border-radius: 20px;
+
+}
+
+table {
+    border-collapse: collapse;
+    border: 2px solid #884939;
+    width: 100%;
+    background-color: #f7f7f7;
+}
+
+table td {
+    padding: 10px;
+    border: 2px solid #884939;
+    text-align: left;
+}
+
+table td:first-child {
+    font-weight: bold;
+    width: 30%;
+}
+iframe {
+    width: 100%;
+    height: 450px;
+    border: 2px solid #884939; 
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+footer {
+    text-align: center;
+}
+
+@media (max-width: 640px) {}
+    .menu {
+    display: none;
+}
+
+    .nav-bar-center ul {
+    display: none;
+    ;
+}
+
+    .navbar-email {
+    display: none;
+}
+
+
+
+
+

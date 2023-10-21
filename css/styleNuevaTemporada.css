@@ -1,0 +1,150 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+}
+
+.menu {
+    display: none;
+}
+
+.logo {
+    width: 6.25rem;
+}
+
+.nav-bar-right ul,
+.nav-bar-left ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 3.75rem;
+
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1.6rem;
+    border-bottom: 1px solid #C7C7C7;
+}
+
+.nav-bar-left {
+    display: flex;
+}
+
+.nav-bar-left ul {
+    margin-left: 0.5rem;
+}
+
+.nav-bar-left ul li a,
+.nav-bar-right ul li a {
+    text-decoration: none;
+    color: #C7C7C7;
+    border: 1px solid #FFFFFF;
+    padding: 8px;
+    border-radius: 8px;
+}
+
+.nav-bar-left ul li a:hover,
+.nav-bar-right ul li a:hover {
+    color: #884939;
+    border: 1px solid #884939;
+}
+
+.navbar-inicio-sesion {
+    color: #C7C7C7;
+    font-size: 0.8rem;
+    margin-right: 12px;
+}
+
+.carrito {
+    position: relative;
+}
+
+.carrito div {
+    width: 16px;
+    height: 16px;
+    background-color: #884939;
+    border-radius: 50%;
+    font-size: 0.8rem;
+    font-weight: bold;
+    position: absolute;
+    top: -6px;
+    right: -3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #FFFFFF;
+    font-size: 0.6rem;
+}
+
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 240px);
+    gap: 26px;
+    place-content: center;
+}
+
+.product-card {
+    width: 240px;
+}
+
+.product-card img {
+    width: 240px;
+    height: 240px;
+    border-radius: 20px;
+    margin-top: 25px;
+}
+
+.product-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 12px;
+}
+
+.product-info div p:nth-child(1) {
+    font-weight: bold;
+    font-size: var(--md);
+    margin-top: 0px;
+    margin-bottom: 4px;
+}
+
+.product-info div p:nth-child(2) {
+    font-size: var(--sm);
+    margin-top: 0;
+    margin-bottom: 0;
+    color: var(--very-light-pink);
+}
+
+.product-info figure {
+    margin: 0;
+}
+
+.product-info figure img {
+    width: 35px;
+    height: 35px;
+}
+
+footer {
+    text-align: center;
+}
+
+@media (max-width: 640px) {
+    .cards-container {
+    grid-template-columns: repeat(auto-fill, 140px);
+}
+
+.product-card {
+    width: 140px;
+}
+
+.product-card img {
+    width: 140px;
+    height: 140px;
+    
+}
+}
