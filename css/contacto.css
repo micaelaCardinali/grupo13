@@ -1,0 +1,121 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+}
+
+.menu {
+    display: none;
+}
+
+.logo {
+    width: 6.25rem;
+}
+
+.nav-bar-right ul,
+.nav-bar-left ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 3.75rem;
+
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1.6rem;
+    border-bottom: 1px solid #C7C7C7;
+}
+
+.nav-bar-left {
+    display: flex;
+}
+
+.nav-bar-left ul {
+    margin-left: 0.5rem;
+}
+
+.nav-bar-left ul li a,
+.nav-bar-right ul li a {
+    text-decoration: none;
+    color: #C7C7C7;
+    border: 1px solid #FFFFFF;
+    padding: 8px;
+    border-radius: 8px;
+}
+
+.nav-bar-left ul li a:hover,
+.nav-bar-right ul li a:hover {
+    color: #884939;
+    border: 1px solid #884939;
+}
+
+.navbar-inicio-sesion {
+    color: #C7C7C7;
+    font-size: 0.8rem;
+    margin-right: 12px;
+}
+
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+}
+
+section form {
+    max-width: 100%;
+    margin: 0 auto; 
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    border: none;
+    margin-right: 30px; 
+    margin-left: 30px; 
+}
+
+
+section form div {
+    display: flex;
+    flex-direction: column; 
+    margin-bottom: 20px;
+}
+
+section form label {
+    margin-top: 15px;
+    font-size: 20px;
+    color: #884939;
+
+}
+
+section form select, section form input[type="text"], section form input[type="tel"], section form input[type="file"], section form textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+section form input[type="file"] {
+    padding: 0;
+}
+
+/* Estilos del botón de envío */
+section form input[type="submit"] {
+    background-color: #884939;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+section form input[type="submit"]:hover {
+    background-color: #fff;
+    color: #884939;
+   
+    
+}
+@media (max-width: 1280px){}
