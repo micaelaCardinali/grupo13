@@ -18,13 +18,13 @@
             <img src="./assets/icons/logoMundo.svg" alt="logo" class="logo">
 
         
-            <form action="" class="form">
+            <form action="" name="form" class="form">
                 <div>
                     <label for="name" class="label">Nombre</label>
                     <input type="text" id="name" placeholder="Tu nombre" class="input input-nombre">
                     
-                    <label for="last-name" class="label">Apellido</label>
-                    <input type="text" id="apellido" placeholder="Tu apellido" class="input input-apellido">
+                    <label for="lastname" class="label">Apellido</label>
+                    <input type="text" id="lastname" placeholder="Tu apellido" class="input input-apellido">
 
                     <label for="email" class="label">Correo electrónico</label>
                     <input type="text" id="email" placeholder="tucorreo@example.com" class="input input-email">
@@ -32,12 +32,13 @@
                     <label for="password" class="label">Contraseña</label>
                     <input type="password" id="password" placeholder="*********" class="input input-password">
 
-                    <input type="submit" value="Ingresar" class="iniciar-sesion boton-inicio">
+                    <input type="submit" value="Ingresar" class="iniciar-sesion boton-inicio"onclick="validarEnviar()">
                 
                 </div>
             </form>
             <a href="./index.html"><button class="crear-cuenta boton-inicio">Volver a la tienda</button></a>
         </div>
     </div>
+    <script src="js/crearcuenta.js"></script>
 </body>
 </html>
