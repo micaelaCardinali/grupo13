@@ -1,139 +1,65 @@
-body{
-    background-color: rgb(219, 174, 157);
-    font-family: 'Montserrat', sans-serif;
-    margin: 0;
-}
-.menu {
-    display: none;
-    
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+    <title>Rebajas</title>
+    <link rel="stylesheet" href="rebajas.css">
+</head>
+<body>
+    <header class="hero"
+        <a href="./index.html">
+            <img src="./assets/logo Mundo.png" alt="logo-marca" class="logo">
+        </a>
+          
+    <main>
+    <section><div id="hero">
+       <h1>REBAJAS</h1> 
+    </div></section>
+    <section><div id="Ropa de Rebajas"></div></section>
+    <div class="contenedor-producto"</div>
 
-.logo {
-    margin: 30px;
-    width: 6.25rem;
-}
+<div class="producto"><div class="producto">Campera Jean Oscura</div>
+        <img src="img/camp. negra.jpg"width="110px" height="110px"
+        <span>Precio: $7.000</span>
+        <button>COMPRAR</button>
+</div>
 
-button{
-    border: 2px #000;
-    background-color: rgb(124, 124, 185);
-}
-button:hover{
-    background-color: rgb(78, 78, 185);
-}
-.carrito {
-    position: relative;
-}
+<div class="producto"><div class="producto">Campera Jean</div>
+        <img src="img/campera.webp"width="110px" height="110px"
+        <span>Precio:$6.300</span>
+        <button>COMPRAR</button>
+</div>
 
-div{
-    text-align: center;
-}
-p{
-    color:black;
-    font-size: 24px;
-}
+<div class="producto"><div class="producto">Camisa sin Mangas</div>
+        <img src="img/camisa 1.webp"width="110px" height="110px" 
+        <span>Precio:$4.500</span>
+        <button>COMPRAR</button>
+</div>
 
-.producto {
-    background-color: #f7f7f7;  
-    font-size: 20px;         
-    font-family: Arial, sans-serif; 
-    color: #333;
-    margin: 10px; 
-    padding: 15px;
-    border: 1px solid #000; 
-    border-radius: 5px;
-    box-shadow: 3px 3px 5px #888;
-    text-transform: uppercase;
-    text-align: center;
-    opacity: 0.7;
-    font-family: "Font Awesome 5 Free";
-  }
-  
+<div class="producto"><div class="producto">Camisa Azul</div>
+    <img src="img/camisa.webp"width="110px" height="110px"
+    <span>Precio:$6.000</span>
+    <button>COMPRAR</button>
+</div>
 
-.container{
-    width: 90%;
-    margin: 0 auto;
-    overflow: hidden;
-    padding: var(--padding-container);
-    
-}
+<div class="producto"><div class="producto">Pantalon Jean Clasico</div>
+    <img src="img/jean 1.webp"width="110px" height="110px"
+    <span>Precio:$9.500</span>
+    <button>COMPRAR</button>
+</div>
 
-.contenedor-producto{
-    display: flex;
-    
+<div class="producto"><div class="producto">Pantalon Cargo</div>
+    <img src="img/jean 2.webp"width="110px" height="110px"
+    <span>Precio:$10.500</span>
+    <button>COMPRAR</button>
+</div>
 
-}
-.carrito div {
-    width: 16px;
-    height: 16px;
-    background-color: #884939;
-    border-radius: 50%;
-    font-size: 0.8rem;
-    font-weight: bold;
-    position: absolute;
-    top: -6px;
-    right: -3px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #FFFFFF;
-    font-size: 0.6rem;
-}
-
-.cards-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, 240px);
-    gap: 26px;
-    place-content: center;
-}
-
-.product-card img {
-    width: 240px;
-    height: 240px;
-    border-radius: 20px;
-    margin-top: 25px;
-}
-
-.product-info {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 12px;
-}
-
-.product-info div p:nth-child(1) {
-    font-weight: bold;
-    font-size: var(--md);
-    margin-top: 0px;
-    margin-bottom: 4px;
-}
-
-.product-info div p:nth-child(2) {
-    font-size: var(--sm);
-    margin-top: 0;
-    margin-bottom: 0;
-    color: var(--very-light-pink);
-}
-
-.product-info figure {
-    margin: 0;
-}
-
-footer {
-    text-align: center;
-}
-
-@media (max-width: 640px) {
-    .cards-container {
-    grid-template-columns: repeat(auto-fill, 140px);
-}
-
-.product-card {
-    width: 140px;
-}
-
-.product-card img {
-    width: 140px;
-    height: 140px;
-    
-}
-}
+    </main>
+</head>   
+</body>
+</html>
