@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,37 +9,81 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./css/iniciarSesion.css">
+    <link rel="stylesheet" href="./css/contacto.css">
     <link rel="shortcut icon" href="" type="image/x-icon">
     <title>MUNDO</title>
 </head>
+
 <body>
-    <div class="ingresar">
-        <div class="ingresar-container">
-            <img src="./assets/icons/logoMundo.svg" alt="logo" class="logo">
+    <nav>
+        <img src="./assets/icons/menu.svg" alt="menu" class="menu">
+        <div class="nav-bar-left">
+            <img src="./assets/icons/./logoMundo.svg" alt="logo" class="logo">
+            <ul>
+                <li>
+                    <a href="./nuevaTemporada.html">Nueva Temporada</a>
+                </li>
+                <li>
+                    <a href="./rebajas.html">Rebajas</a>
+                </li>
 
-        
-            <form action="" name="form" class="form">
-                <div>
-                    <label for="name" class="label">Nombre</label>
-                    <input type="text" id="name" placeholder="Tu nombre" class="input input-nombre">
-                    
-                    <label for="lastname" class="label">Apellido</label>
-                    <input type="text" id="lastname" placeholder="Tu apellido" class="input input-apellido">
+                <li>
+                    <a href="./sucursales.html">Sucursales</a>
+                </li>
 
-                    <label for="email" class="label">Correo electrónico</label>
-                    <input type="text" id="email" placeholder="tucorreo@example.com" class="input input-email">
-                
-                    <label for="password" class="label">Contraseña</label>
-                    <input type="password" id="password" placeholder="*********" class="input input-password">
-
-                    <input type="submit" value="Ingresar" class="iniciar-sesion boton-inicio"onclick="validarEnviar()">
-                
-                </div>
-            </form>
-            <a href="./index.html"><button class="crear-cuenta boton-inicio">Volver a la tienda</button></a>
+                <li>
+                    <a href="/">Contactanos</a>
+                </li>
+            </ul>
         </div>
-    </div>
-    <script src="crearcuenta.js"></script>
+
+        <div class="nav-bar-right">
+            <ul>
+                <li class="navbar-inicio-sesion">
+                    <a href="./iniciarSesion.html">Iniciar Sesión</a>
+                </li>
+                <li class="carrito">
+                    <img src="./assets/icons/carrito.svg" alt="shopping">
+                    <div>0</div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <section>
+        <form  action="" name="formulario" method="">
+            <div>
+                <label for="opciones">Contanos el motivo de tu consulta:</label>
+                <select id="opciones" name="opciones">
+                    <option value="" disabled selected>Selecciona un asunto</option>
+                    <option value="opcion1">Aun no tengo mi pedido</option>
+                    <option value="opcion2">Quiero devolver mi pedido</option>
+                    <option value="opcion3">Trabajo con nosotros</option>
+                    <option value="opcion4">Otras consultas</option>
+                </select>
+
+                <label for="nombre" class="label">Nombre</label>
+                <input type="text" id="nombre" placeholder="Tu nombre" class="input input-nombre">
+                
+                <label for="apellido" class="label">Apellido</label>
+                <input type="text" id="apellido" placeholder="Tu apellido" class="input input-apellido">
+
+                <label for="email" class="label">Correo electrónico</label>
+                <input type="text" id="email" placeholder="tucorreo@example.com" class="input input-email">
+
+                <label for="telefono">Teléfono:</label>
+                <input type="tel" id="telefono" name="telefono" placeholder="Tu número de teléfono">
+
+                <label for="pdf">Cargar un archivo PDF:</label>
+                <input type="file" id="pdf" name="pdf" accept=".pdf">
+
+                <label for="consulta">Consulta:</label>
+                <textarea id="consulta" name="consulta" rows="4" cols="50" placeholder="Escribe tu consulta aquí"></textarea>
+            </div>
+            <div>
+                <input type="submit" id="b1" name="btn" value="Enviar"onclick="validarEnviar()" >
+            </div>
+        </form>
+    </section>
+    <script src="js/contacto.js"></script>
 </body>
 </html>
