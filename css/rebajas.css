@@ -31,6 +31,10 @@ nav {
     border-bottom: 1px solid #C7C7C7;
 }
 
+section {
+    margin-bottom: 200px;
+}
+
 .nav-bar-left {
     display: flex;
 }

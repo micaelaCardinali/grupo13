@@ -60,10 +60,25 @@ nav {
     margin-right: 12px;
 }
 
+.carrito {
+    position: relative;
+}
 
-body {
-    font-family: 'Montserrat', sans-serif;
-    margin: 0;
+.carrito div {
+    width: 16px;
+    height: 16px;
+    background-color: #884939;
+    border-radius: 50%;
+    font-size: 0.8rem;
+    font-weight: bold;
+    position: absolute;
+    top: -6px;
+    right: -3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #FFFFFF;
+    font-size: 0.6rem;
 }
 
 section form {
