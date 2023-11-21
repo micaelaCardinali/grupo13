@@ -1,60 +1,69 @@
-body{
-    background-color: rgb(219, 174, 157);
+body {
     font-family: 'Montserrat', sans-serif;
     margin: 0;
 }
+
 .menu {
     display: none;
-    
 }
 
 .logo {
-    margin: 30px;
     width: 6.25rem;
+}
+
+.nav-bar-right ul,
+.nav-bar-left ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 3.75rem;
+
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1.6rem;
+    border-bottom: 1px solid #C7C7C7;
+}
+
+.nav-bar-left {
+    display: flex;
+}
+
+.nav-bar-left ul {
+    margin-left: 0.5rem;
+}
+
+.nav-bar-left ul li a,
+.nav-bar-right ul li a {
+    text-decoration: none;
+    color: #C7C7C7;
+    border: 1px solid #FFFFFF;
+    padding: 8px;
+    border-radius: 8px;
+}
+
+.nav-bar-left ul li a:hover,
+.nav-bar-right ul li a:hover {
+    color: #884939;
+    border: 1px solid #884939;
+}
+
+.navbar-inicio-sesion {
+    color: #C7C7C7;
+    font-size: 0.8rem;
+    margin-right: 12px;
 }
 
 .carrito {
     position: relative;
 }
 
-div{
-    text-align: center;
-}
-p{
-    color:black;
-    font-size: 24px;
-}
-
-.producto {
-    background-color: #f7f7f7;  
-    font-size: 20px;         
-    font-family: Arial, sans-serif; 
-    color: #333;
-    margin: 10px; 
-    padding: 15px;
-    border: 1px solid #000; 
-    border-radius: 5px;
-    box-shadow: 3px 3px 5px #888;
-    text-transform: uppercase;
-    text-align: center;
-    opacity: 0.7;
-    font-family: "Font Awesome 5 Free";
-  }
-  
-
-.container{
-    width: 90%;
-    margin: 0 auto;
-    overflow: hidden;
-    padding: var(--padding-container);
-    
-}
-
-.contenedor-producto{
-    display: flex;
-    
-
-}
 .carrito div {
     width: 16px;
     height: 16px;
@@ -77,6 +86,10 @@ p{
     grid-template-columns: repeat(auto-fill, 240px);
     gap: 26px;
     place-content: center;
+}
+
+.product-card {
+    width: 240px;
 }
 
 .product-card img {
@@ -109,6 +122,11 @@ p{
 
 .product-info figure {
     margin: 0;
+}
+
+.product-info figure img {
+    width: 35px;
+    height: 35px;
 }
 
 footer {
