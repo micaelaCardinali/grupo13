@@ -61,11 +61,12 @@ nav {
     border-radius: 8px;
     transition: color 0.3s ease-in-out; 
 }
-.carrito {
+.enlaces-menu .carrito {
     position: relative;
+    margin-right: 20px;
 }
 
-.carrito div {
+.enlaces-menu .carrito div {
     width: 16px;
     height: 16px;
     background-color: #884939;
@@ -73,14 +74,17 @@ nav {
     font-size: 0.8rem;
     font-weight: bold;
     position: absolute;
-    top: -6px;
-    right: -3px;
+    top: 50%;
+    transform: translate(0, -50%);
+    right: 0; 
     display: flex;
     justify-content: center;
     align-items: center;
     color: #FFFFFF;
     font-size: 0.6rem;
 }
+
+
 
 header {
     width: 100%;
