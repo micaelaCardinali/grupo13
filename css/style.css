@@ -1,6 +1,7 @@
 body {
     font-family: 'Montserrat', sans-serif;
     margin: 0;
+    overflow-x: hidden;
     
 }
 
@@ -90,6 +91,8 @@ nav {
     justify-content: center;
     align-items: center;
     height: 100vh; 
+    margin-top: 20px ;
+    margin-bottom: 20px;
 }
 
 .nuevaTemporada img {
@@ -150,7 +153,8 @@ footer {
 
 @media (max-width: 768px){
     body{
-        overflow: hidden;
+        overflow: visible;
+        overflow-x: hidden;
     }
    .logo{
     padding-left: 25px;
@@ -188,8 +192,26 @@ footer {
    }
 
    .enlaces-menu .carrito div {
-    display: none; ; 
+    display: none; 
 
+}
+.nuevaTemporada {
+    height: auto; 
+    overflow: visible;
+    
+}
+.nuevaTemporada img {
+    width: 90%;
+    max-width: 100%;
+    margin: 20px auto; 
+    border-radius: 3%;
+}
+.box{
+    width: 90%;
+    max-width: 100%;
+    margin: 20px auto; 
+    border-radius: 3%;
+}
 }
 
    @keyframes muestraMenu {
@@ -206,7 +228,6 @@ footer {
 
 
 .container {
-        margin-top: 550px; /* Esto puede necesitar ajustarse según tus necesidades */
+        margin-top: 20px; /* Esto puede necesitar ajustarse según tus necesidades */
     
-}
 }
