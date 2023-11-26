@@ -56,9 +56,15 @@
     <header>
 
     </header>
-     <div class="nuevaTemporada">
-        <img src="assets/homepage/carrusel 1.png" alt="">
-     </div>
+    <div class="carrusel-container">
+        <button class="carrusel-btn carrusel-btn-left" onclick="retrocederCarrusel()">❮</button>
+        <div class="carrusel">
+            <img src="assets/homepage/carrusel 1.png" alt="">
+            <img src="assets/homepage/carrusel 2.png" alt="">
+            <img src="assets/homepage/carrusel 3.png" alt="">
+        </div>
+        <button class="carrusel-btn carrusel-btn-right" onclick="avanzarCarrusel()">❯</button>
+    </div>
 
     <section>
         <div class="container">
@@ -83,6 +89,7 @@
 
     <footer>Hecho con 💙 para codo a codo.</footer><br>
 <script src="js/menuhamburguesa.js"> </script>
+<script src="js/carrusel.js"> </script>
 </body>
 
 </html>

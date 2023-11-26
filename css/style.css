@@ -86,19 +86,42 @@ nav {
     font-size: 0.6rem;
 }
 
-.nuevaTemporada {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh; 
-    margin-top: 20px ;
-    margin-bottom: 20px;
+.carrusel-container {
+    position: relative;
+    width: 85%; 
+    margin: 0 auto; 
+    overflow: hidden;
+    margin-top: 20px;
 }
 
-.nuevaTemporada img {
-    max-width: 100%; 
-    max-height: 100%; 
+.carrusel {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carrusel img {
+    width: 100%;
+    max-width: 100%;
     border-radius: 3%;
+}
+
+.carrusel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1; 
+}
+
+.carrusel-btn-left {
+    left: 10px;
+}
+
+.carrusel-btn-right {
+    right: 10px;
 }
 .section {
     display: flex;
