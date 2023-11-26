@@ -139,7 +139,7 @@ section form input[type="submit"]:hover {
 }
 @media (max-width: 768px){
     body{
-        overflow: hidden;
+        overflow: visible;;
     }
    .logo{
     padding-left: 25px;
