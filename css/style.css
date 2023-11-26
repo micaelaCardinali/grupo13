@@ -63,7 +63,7 @@ nav {
 }
 .enlaces-menu .carrito {
     position: relative;
-    margin-right: 20px;
+    margin-left: auto;
 }
 
 .enlaces-menu .carrito div {
@@ -76,7 +76,7 @@ nav {
     position: absolute;
     top: 50%;
     transform: translate(0, -50%);
-    right: 0; 
+    right: -20px; 
     display: flex;
     justify-content: center;
     align-items: center;
@@ -185,6 +185,9 @@ footer {
     text-align: center;
     padding: 20px;
    }
+   .enlaces-menu .carrito div {
+    margin-left: auto; 
+}
    @keyframes muestraMenu {
     from{opacity: 0;}
     to {opacity: 1;}
