@@ -14,9 +14,8 @@
 <body>
     <nav>
         <img src="./assets/icons/menu.svg" alt="menu" class="menu">
-        <div class="nav-bar-left">
             <a href="./index.html"><img src="./assets/icons/./logoMundo.svg" alt="logo" class="logo"></a>
-            <ul>
+            <ul class="enlaces-menu">
                 <li>
                     <a href="./nuevaTemporada.html">Nueva Temporada</a>
                 </li>
@@ -31,20 +30,26 @@
                 <li>
                     <a href="contacto.html">Contactanos</a>
                 </li>
-            </ul>
-        </div>
 
-        <div class="nav-bar-right">
-            <ul>
-                <li class="navbar-inicio-sesion">
+                <li>
                     <a href="./iniciarSesion.html">Iniciar Sesión</a>
                 </li>
-                <li class="carrito">
-                    <img src="./assets/icons/carrito.svg" alt="shopping">
-                    <div>0</div>
+
+                <li>
+                    <div class="carrito">
+                        <img src="./assets/icons/carrito.svg" alt="shopping">
+                        <div>0</div>
+                    </div>
                 </li>
+                
             </ul>
-        </div>
+           
+
+        <button class="ham" type="button">
+            <span class= "br-1"></span> 
+            <span class= "br-2" ></span>
+            <span class= "br-3" ></span>
+        </button>
     </nav>
    <section class="main-container">
         <div class="cards-container">
@@ -92,5 +97,6 @@
         </div>
    </section><br><br>
    <footer>Hecho con 💙 para codo a codo.</footer><br>
+   <script src="js/menuhamburguesa.js"> </script>
 </body>
 </html>

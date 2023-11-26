@@ -174,7 +174,7 @@ footer {
     padding: 20px;
    }
    .enlaces-menu .carrito div {
-    margin-left: auto; 
+    display: none; 
 }
    @keyframes muestraMenu {
     from{opacity: 0;}

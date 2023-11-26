@@ -171,7 +171,8 @@ footer {
    }
    .enlaces-menu{
     flex-direction: column;
-    justify-content: space-around;
+    /*justify-content: space-around;*/
+    justify-content: center;
     align-items: center;
     height: 92vh;
     margin: 0;
@@ -185,9 +186,12 @@ footer {
     text-align: center;
     padding: 20px;
    }
+
    .enlaces-menu .carrito div {
-    margin-left: auto; 
+    display: none; ; 
+
 }
+
    @keyframes muestraMenu {
     from{opacity: 0;}
     to {opacity: 1;}
