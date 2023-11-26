@@ -11,60 +11,62 @@ body {
     width: 6.25rem;
 }
 
-.nav-bar-right ul,
-.nav-bar-left ul {
-    list-style: none;
+nav { 
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    min-height: 8vh;
+    background-color: #FFFAFA;
+}
+
+
+.ham {
+    display: none;
+    cursor: pointer;
+    border: none; 
+    margin:0;
+    background-color: transparent;
+}
+
+.ham span {
+    display: block;
+    background-color: #ccc;
+    height: 3px;
+    width: 28px;
+    margin: 6px auto;
+    border-radius: 2px;
+
+}
+.enlaces-menu{
+    display: flex;
     padding: 0;
-    margin: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 3.75rem;
-
 }
 
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 1.6rem;
-    border-bottom: 1px solid #C7C7C7;
+.enlaces-menu li {
+    padding: 0 40px;
+    list-style-type: none;
 }
 
-.nav-bar-left {
-    display: flex;
-}
-
-.nav-bar-left ul {
-    margin-left: 0.5rem;
-}
-
-.nav-bar-left ul li a,
-.nav-bar-right ul li a {
+.enlaces-menu li a {
     text-decoration: none;
-    color: #C7C7C7;
-    border: 1px solid #FFFFFF;
-    padding: 8px;
-    border-radius: 8px;
+    font-size: 1rem ;
+    color:#884939;
+    font-weight: 300;
+
 }
 
-.nav-bar-left ul li a:hover,
-.nav-bar-right ul li a:hover {
+.enlaces-menu li:hover{
     color: #884939;
     border: 1px solid #884939;
+    border-radius: 8px;
+    transition: color 0.3s ease-in-out; 
 }
-
-.navbar-inicio-sesion {
-    color: #C7C7C7;
-    font-size: 0.8rem;
-    margin-right: 12px;
-}
-
-.carrito {
+.enlaces-menu .carrito {
     position: relative;
+    margin-left: auto;
 }
 
-.carrito div {
+.enlaces-menu .carrito div {
     width: 16px;
     height: 16px;
     background-color: #884939;
@@ -72,8 +74,9 @@ nav {
     font-size: 0.8rem;
     font-weight: bold;
     position: absolute;
-    top: -6px;
-    right: -3px;
+    top: 50%;
+    transform: translate(0, -50%);
+    right: -20px; 
     display: flex;
     justify-content: center;
     align-items: center;
@@ -133,7 +136,57 @@ footer {
     text-align: center;
 }
 
-@media (max-width: 640px) {
+@media (max-width: 768px) {
+    body{
+        overflow: hidden;
+    }
+   .logo{
+    padding-left: 25px;
+   }
+   .ham{
+    display: block;
+    position: absolute;
+    top: 15px;
+    right: 25px;
+   }
+
+   nav{
+    flex-direction: column;
+    align-items: flex-start;
+    padding-top: 25px;
+    padding-bottom: 25px;
+
+   }
+   .enlaces-menu{
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 92vh;
+    margin: 0;
+    padding: 0;
+    width:100%;
+    display: none; 
+    opacity:0
+   }
+   .enlaces-menu li {
+    width: 100%;
+    text-align: center;
+    padding: 20px;
+   }
+   .enlaces-menu .carrito div {
+    margin-left: auto; 
+}
+   @keyframes muestraMenu {
+    from{opacity: 0;}
+    to {opacity: 1;}
+    
+   } 
+
+.enlaces-menu.activado{
+        display: flex;
+        animation: muestraMenu 350ms ease-in-out both;
+   }
+ 
     .cards-container {
     grid-template-columns: repeat(auto-fill, 140px);
 }
