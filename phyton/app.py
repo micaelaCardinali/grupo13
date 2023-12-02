@@ -1,80 +1,77 @@
-class catalogo:
-    productos = [] #variable de clase
+import mysql.connector
 
+class Catalogo:
+    def __init__(self, host, user, password, database):
+        self.conn = mysql.connector.connect(
+            host=host,
+            user=user,
+            password=password,
+            database=database
+        )
+        
+        self.cursor = self.conn.cursor(dictionary=True)
+        self.cursor.execute(''' CREATE TABLE IF NOT EXISTS productos (
+            codigo INT,
+            descripcion VARCHAR(255) NOT NULL,
+            precio DECIMAL(10, 2) NOT NULL,
+            imagen_url VARCHAR(255),
+            proveedor INT(2),
+            cantidad INT)''')
+        self.conn.commit()
 
     def agregar_producto (self, codigo, descripcion, cantidad, precio, imagen, proveedor):
-
-        if self.consltar_producto(codigo):
+        
+        self.cursor.execute(f"SELECT * FROM productos WHERE codigo = {codigo}")
+        producto_existe = self.cursor.fetchone()
+        if producto_existe:
             return False
         
-        nuevo_producto = { # Diccionario de datos
-            'codigo': codigo,
-            'descripcion': descripcion,
-            'cantidad': cantidad,
-            'precio': precio,
-            'imagen': imagen,
-            'proveedor': proveedor
-        }
-        self.productos.append(nuevo_producto)
+        sql = f"INSERT INTO productos(codigo, descripcion, cantidad, precio, imagen_url, proveedor) VALUES ({codigo},'{descripcion}', {cantidad}, {precio}, '{imagen}', {proveedor})"
+        self.cursor.execute(sql)
+        self.conn.commit()
         return True
+      
+    def consultar_producto(self, codigo):
+        self.cursor.execute(f"SELECT * FROM productos WHERE codigo = {codigo}")
+        return self.cursor.fetchone()
+    
+    def modificar_producto(self, codigo, nueva_descripcion,nueva_cantidad, nuevo_precio, nueva_imagen, nuevo_proveedor):
+        
+        sql = f"UPDATE productos SET descripcion = '{nueva_descripcion}', cantidad = {nueva_cantidad}, precio = {nuevo_precio}, imagen_url = '{nueva_imagen}', proveedor = {nuevo_proveedor} WHERE codigo = {codigo}"
+        self.cursor.execute(sql)
+        self.conn.commit()
+        return self.cursor.rowcount > 0
 
-    def consltar_producto(self, codigo):
-        for producto in self.productos:
-            if producto['codigo'] == codigo: #si es igual el producto existe
-                return producto
-        return False
+    
+    def mostrar_producto(self, codigo):
+        producto = self.consultar_producto(codigo)
+        if producto:
+            print("-" * 40)
+            print(f"Código.....: {producto['codigo']}")
+            print(f"Descripción: {producto['descripcion']}")
+            print(f"Cantidad...: {producto['cantidad']}")
+            print(f"Precio.....: {producto['precio']}")
+            print(f"Imagen.....: {producto['imagen_url']}")
+            print(f"Proveedor..: {producto['proveedor']}")
+            print("-" * 40)
+        else:
+            print("Producto no encontrado.")
 
-    def lista_productos(self):
-        print()
-        print("-"*50)
-        for producto in self.productos:
-            print(f'Codigo.......: {producto["codigo"]}')
-            print(f'Descripción..: {producto["descripcion"]}')
-            print(f'Cantidad.....: {producto["cantidad"]}')
-            print(f'precio.......: {producto["precio"]}')
-            print(f'imagen.......: {producto["imagen"]}')
-            print(f'Proveedor....: {producto["proveedor"]}')
-            print("-"*50)
-
-    def modifigar_productos(self, codigo, nueva_descripcion, nueva_cantidad, nuevo_precio, nueva_imagen, nuevo_proveedor):
-        for producto in self.productos:
-            if producto['codigo'] == codigo:
-                producto['descripcion'] = nueva_descripcion
-                producto['cantidad'] = nueva_cantidad
-                producto['precio'] = nuevo_precio
-                producto['imagen'] = nueva_imagen
-                producto['proveedor'] = nuevo_proveedor
-                return True
-        return False
-
+    def listar_productos(self):
+        self.cursor.execute("SELECT * FROM productos")
+        productos = self.cursor.fetchall()
+        print("-" * 40)
+        for producto in productos:
+            print(f"Código.....: {producto['codigo']}")
+            print(f"Descripción: {producto['descripcion']}")
+            print(f"Cantidad...: {producto['cantidad']}")
+            print(f"Precio.....: {producto['precio']}")
+            print(f"Imagen.....: {producto['imagen_url']}")
+            print(f"Proveedor..: {producto['proveedor']}")
+            print("-" * 40)
+            
     def eliminar_producto(self, codigo):
-        for producto in self.productos:
-            if producto['codigo'] == codigo:
-                self.productos.remove(producto)
-                return True
-        return False
-
-
-
-# -------------------------------------------
-# Programa principal
-
-catalogo = catalogo()
-# Agregamos productos...
-catalogo.agregar_producto(1, 'Laptop Dell', 5, 2399.99, 'laptop.jpg', 101)
-catalogo.agregar_producto(2, 'Televisor Samsung', 4, 7899.99, 'televisor.jpg', 302)
-
-# Listar los productos
-print("******** LISTADO DE PRODUCTOS ********")
-catalogo.lista_productos()
-#print(productos)
-
-#Modificar un producto
-catalogo.modifigar_productos(1, 'Laptop legasi', 10, 30099.99, 'laptop_legasi.jpg', 101)
-
-#Eliminar productos
-catalogo.eliminar_producto(2)
-
-
-print("******** LISTADO DE PRODUCTOS ********")
-catalogo.lista_productos()
+        self.cursor.execute(f"DELETE FROM productos WHERE codigo = {codigo}")
+        self.conn.commit()
+        return self.cursor.rowcount > 0
+            
