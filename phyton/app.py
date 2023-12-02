@@ -24,10 +24,10 @@ class catalogo:
                 return producto
         return False
 
-    def lista_productos():
+    def lista_productos(self):
         print()
         print("-"*50)
-        for producto in productos:
+        for producto in self.productos:
             print(f'Codigo.......: {producto["codigo"]}')
             print(f'Descripción..: {producto["descripcion"]}')
             print(f'Cantidad.....: {producto["cantidad"]}')
@@ -36,8 +36,8 @@ class catalogo:
             print(f'Proveedor....: {producto["proveedor"]}')
             print("-"*50)
 
-    def modifigar_productos(codigo, nueva_descripcion, nueva_cantidad, nuevo_precio, nueva_imagen, nuevo_proveedor):
-        for producto in productos:
+    def modifigar_productos(self, codigo, nueva_descripcion, nueva_cantidad, nuevo_precio, nueva_imagen, nuevo_proveedor):
+        for producto in self.productos:
             if producto['codigo'] == codigo:
                 producto['descripcion'] = nueva_descripcion
                 producto['cantidad'] = nueva_cantidad
@@ -47,10 +47,10 @@ class catalogo:
                 return True
         return False
 
-    def eliminar_producto(codigo):
-        for producto in productos:
+    def eliminar_producto(self, codigo):
+        for producto in self.productos:
             if producto['codigo'] == codigo:
-                productos.remove(producto)
+                self.productos.remove(producto)
                 return True
         return False
 
@@ -66,15 +66,15 @@ catalogo.agregar_producto(2, 'Televisor Samsung', 4, 7899.99, 'televisor.jpg', 3
 
 # Listar los productos
 print("******** LISTADO DE PRODUCTOS ********")
-lista_productos()
+catalogo.lista_productos()
 #print(productos)
 
 #Modificar un producto
-# modifigar_productos(1, 'Laptop legasi', 10, 30099.99, 'laptop_legasi.jpg', 101)
+catalogo.modifigar_productos(1, 'Laptop legasi', 10, 30099.99, 'laptop_legasi.jpg', 101)
 
 #Eliminar productos
-eliminar_producto(2)
+catalogo.eliminar_producto(2)
 
 
 print("******** LISTADO DE PRODUCTOS ********")
-lista_productos()
+catalogo.lista_productos()
