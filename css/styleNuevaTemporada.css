@@ -132,8 +132,39 @@ nav {
     height: 35px;
 }
 
+.footer-container {
+    display: flex;
+   
+    justify-content: space-between;
+    align-items: center;
+    background-color: #FFFAFA;
+    color: #884939;
+    padding: 20px;
+    font-size: 12px;
+}
+
+.footer-left p {
+    margin: 0;
+}
+
+.footer-right ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+}
+
+.footer-right li {
+    margin-right: 20px;
+}
+
+.footer-right a {
+    text-decoration: none;
+    color: #884939;
+}
+
 footer {
-    text-align: center;
+    bottom: 0;
+    width: 100%;
 }
 
 @media (max-width: 768px) {
