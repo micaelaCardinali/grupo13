@@ -6,12 +6,12 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100vh; /* 100% del viewport height */
+    height: 100vh; 
 }
 
 .logo {
-    width: 400px; /* Doble de ancho */
-    margin-bottom: 20px; /* Doble de margen inferior */
+    width: 400px; 
+    margin-bottom: 20px; 
 }
 
 .container {
@@ -19,31 +19,31 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-top: 20px; /* Margen superior para el contenedor de botones */
-    background-color: #f0e3e3d2  ; /* Color de fondo para hacerlo visible */
-    padding: 40px; /* Añadido para dar espacio alrededor de los botones */
-    border-radius: 10px; /* Borde redondeado */
+    margin-top: 20px; 
+    background-color: #f0e3e3d2  ; 
+    padding: 40px; 
+    border-radius: 10px; 
 }
 
 .botones {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 100%; /* Asegurar que ocupe todo el ancho del contenedor */
+    width: 100%; 
 }
 
 .botones button {
-    margin: 10px 0; /* Espaciado entre los botones y margen inferior */
-    font-size: 24px; /* Doble de tamaño de fuente */
+    margin: 10px 0; 
+    font-size: 24px; 
     cursor: pointer;
-    background-color: #884939 ; /* Green */
+    background-color: #884939 ; 
     color: #fff;
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
-    width: 100%; /* Asegurar que ocupe todo el ancho del contenedor */
-    box-sizing: border-box; /* Incluir padding y border en el ancho del botón */
-    transition: background-color 0.3s, color 0.3s; /* Transición suave de color durante 0.3 segundos */
+    width: 100%; 
+    box-sizing: border-box; 
+    transition: background-color 0.3s, color 0.3s;
 }
 
 
@@ -86,15 +86,14 @@ footer {
 
 @media only screen and (max-width: 600px) {
     .logo {
-        width: 300px; /* Ajuste para pantallas más pequeñas */
+        width: 300px; 
     }
 
     .botones button {
-        font-size: 24px; /* Ajuste para pantallas más pequeñas */
+        font-size: 24px; 
     }
 }
 
-/* Punto de quiebre para pantallas medianas, como tablets */
 @media only screen and (min-width: 601px) and (max-width: 1024px) {
     .logo {
         width: 350px; 
