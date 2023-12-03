@@ -1,0 +1,102 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* 100% del viewport height */
+}
+
+.logo {
+    width: 400px; /* Doble de ancho */
+    margin-bottom: 20px; /* Doble de margen inferior */
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px; /* Margen superior para el contenedor de botones */
+    background-color: #f0e3e3d2  ; /* Color de fondo para hacerlo visible */
+    padding: 40px; /* Añadido para dar espacio alrededor de los botones */
+    border-radius: 10px; /* Borde redondeado */
+}
+
+.botones {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%; /* Asegurar que ocupe todo el ancho del contenedor */
+}
+
+.botones button {
+    margin: 10px 0; /* Espaciado entre los botones y margen inferior */
+    font-size: 24px; /* Doble de tamaño de fuente */
+    cursor: pointer;
+    background-color: #884939 ; /* Green */
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    width: 100%; /* Asegurar que ocupe todo el ancho del contenedor */
+    box-sizing: border-box; /* Incluir padding y border en el ancho del botón */
+    transition: background-color 0.3s, color 0.3s; /* Transición suave de color durante 0.3 segundos */
+}
+
+
+.botones button:hover {
+    background-color: white;
+    color: #884939;
+
+}
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #884939;
+    padding: 20px;
+    font-size: 12px;
+}
+.footer-left p {
+    margin: 0;
+}
+
+.footer-right ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+}
+
+.footer-right li {
+    margin-right: 20px;
+}
+
+.footer-right a {
+    text-decoration: none;
+    color: #884939;
+}
+
+footer {
+    bottom: 0;
+    width: 100%;
+}
+
+@media only screen and (max-width: 600px) {
+    .logo {
+        width: 300px; /* Ajuste para pantallas más pequeñas */
+    }
+
+    .botones button {
+        font-size: 24px; /* Ajuste para pantallas más pequeñas */
+    }
+}
+
+/* Punto de quiebre para pantallas medianas, como tablets */
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+    .logo {
+        width: 350px; 
+    }
+}
