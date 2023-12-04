@@ -1,6 +1,6 @@
 #-----------------------------------------------------------
 from flask import Flask, request, jsonify
-from flask import request
+
 from flask_cors import CORS
 import mysql.connector
 from werkzeug.utils import secure_filename
@@ -89,8 +89,10 @@ class Catalogo:
         self.conn.commit()
         return self.cursor.rowcount > 0
 #-----------------------------------------------------------
-Catalogo = Catalogo(host='localhost', user='root', password='', database='miapp')
-ruta_destino = './static/imagenes/'
+# Catalogo = Catalogo(host='localhost', user='root', password='', database='miapp')
+Catalogo = Catalogo(host='G13.mysql.pythonanywhere-services.com', user='G13', password='Mundodenin', database='G13$miapp')
+#ruta_destino = './static/imag/'
+ruta_destino = '/home/G13/mysite/static/img/'
 #-----------------------------------------------------------
 @app.route("/productos", methods=["GET"])
 def listar_productos():
