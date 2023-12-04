@@ -93,7 +93,7 @@ class Catalogo:
         return self.cursor.rowcount > 0
 #-----------------------------------------------------------
 # Catalogo = Catalogo(host='localhost', user='root', password='', database='miapp')
-Catalogo = Catalogo(host='G13.mysql.pythonanywhere-services.com', user='G13', password='Mundodenin', database='G13$miapp')
+Catalogo = Catalogo(host='G13.mysql.pythonanywhere-services.com', user='G13', password='Mundodemin', database='G13$miapp')
 #ruta_destino = './static/imag/'
 ruta_destino = '/home/G13/mysite/static/img/'
 #-----------------------------------------------------------
