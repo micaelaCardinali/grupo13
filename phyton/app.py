@@ -71,8 +71,9 @@ class Catalogo:
         if producto_existe:
             return False
         
-        sql = f"INSERT INTO productos(codigo, descripcion, cantidad, precio, imagen_url, proveedor) VALUES ({codigo},'{descripcion}', {cantidad}, {precio}, '{imagen}', {proveedor})"
-        self.cursor.execute(sql)
+        sql = "INSERT INTO productos(codigo, descripcion, cantidad, precio, imagen_url, proveedor) VALUES (%s, %s, %s, %s, %s, %s)"
+        valores = (codigo, descripcion, cantidad, precio, imagen, proveedor)
+        self.cursor.execute(sql, valores)
         self.conn.commit()
         return True
 #-----------------------------------------------------------
@@ -103,5 +104,56 @@ def mostrar_producto(codigo):
         return jsonify(producto)
     else:
         return "Producto no encontrado", 404
+@app.route("/productos", methods=["POST"])
+def agregar_producto():
+    codigo = request.form['codigo']
+    descripcion = request.form['descripcion']
+    cantidad = request.form['cantidad']
+    precio = request.form['precio']
+    proveedor = request.form['proveedor']
+    imagen = request.form['imagen']
+    nombre_imagen = secure_filename(imagen.filename)
+    
+    nombre_base, extension = os.path.splitext(nombre_imagen)
+    nombre_imagen = f"{nombre_base}_{int(time.time())}{extension}"
+    imagen.save(os.path.join(ruta_destino, nombre_imagen))
+    
+    if Catalogo.agregar_producto(codigo, descripcion, cantidad, precio, nombre_imagen, proveedor):
+        return jsonify({"mensaje": "Producto agregado"}), 201
+    else:
+        return jsonify({"mensaje": "Producto ya existe"}), 400
+    
+@app.route("/productos/<int:codigo>", methods=["DELETE"])
+def eliminar_producto(codigo):
+    producto = Catalogo.consultar_productos(codigo)
+    if producto:
+        ruta_imagen = os.path.join(ruta_destino, producto['imagen_url'])
+        if os.path.exists(ruta_imagen):
+            os.remove(ruta_imagen)
+            
+        if Catalogo.eliminar_producto(codigo):
+            return jsonify({"mensaje":"Producto eliminado"}), 200
+        else:
+            return jsonify({"mensaje":"Error al eliminar el producto"}), 500
+    else:
+        return jsonify({"mensaje": "Producto no encontrado"}), 404
+@app.route("/productos/<int:codigo>", methods=["PUT"])
+def modificar_producto(codigo):
+    nueva_descripcion = request.form.get("descripcion")
+    nueva_cantidad = request.form.get("cantidad")
+    nuevo_precio = request.form.get("precio")
+    nuevo_proveedor = request.form.get("proveedor")
+    
+    imagen = request.files['imagen']
+    nombre_imagen = secure_filename(imagen.filename)
+    nombre_base, extension = os.path.splitext(nombre_imagen)
+    nombre_imagen = f"{nombre_base}_{int(time.time())}{extension}"
+    imagen.save(os.path.join(ruta_destino, nombre_imagen))
+    
+    if Catalogo.modificar_producto(codigo, nueva_descripcion, nueva_cantidad, nuevo_precio, nuevo_proveedor):
+        return jsonify({"mensaje":"Producto modificado"}), 200
+    else:
+        return jsonify({"mensaje":"Producto no encontrado"}), 404
+        
 if __name__ == "__main__":
     app.run(debug=True)
