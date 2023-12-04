@@ -18,7 +18,7 @@
     </div>
     <h1 class="titulo"> AGREGAR PRODUCTOS</h1>
     <section>
-        <form  action="" name="formulario" method="">
+        <form  action="https://g13.pythonanywhere.com/productos" enctype="multipart/form-data" id="formulario" name="formulario" method="">
             <div>
                 <form>
                     <label for="codigo">Código:</label>
@@ -33,18 +33,19 @@
                     <label for="precio">Precio:</label>
                     <input type="number" id="precio" name="precio" min="0.01" step="0.01" required>
             
-                    <label for="imagen">Imagen del Producto:</label>
+                    <label for="imagenProducto">Imagen del Producto:</label>
                     <input type="file" id="imagen" name="imagen" accept="image/*">
             
-                    <label for="proveedor">Proveedor:</label>
+                    <label for="proveedorProducto">Proveedor:</label>
                     <input type="text" id="proveedor" name="proveedor" required>
             
-                    <input type="submit" value="Agregar">
+                    <button type="submit" value="Agregar">Agregar</button>
                     <a href="api.html"><button type="button">Menú Principal</button></a>
                 </form>
-            </section>
+                <script src="js/altas.js"></script>
             </div>
-
+        </section>
+        <script src="js/altas.js"></script>
     <footer>
         <div class="footer-container">
             <div class="footer-left">
