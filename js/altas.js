@@ -1,4 +1,4 @@
-const URL = "https://g13.pythonanywhere.com/productos"
+const URL = "https://g13.pythonanywhere.com/"
 
 document.getElementById('formulario').addEventListener('submit', function (event) {
     event.preventDefault();
