@@ -1,4 +1,4 @@
-const URL = "https://g13.pythonanywhere.com/productos"
+const URL = "https://g13.pythonanywhere.com/"
 const app = Vue.createApp({
     data() {
         return{
