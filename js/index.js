@@ -2,7 +2,7 @@ const URL = ""
 
 document.getElementById('formulario').addEventListener('submit', function (event) {
     event.preventDefault();
-}
+})
 
     var formData = new FormData();
     formData.append('codigo', document.getElementById('codigo').value);
