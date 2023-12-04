@@ -2,8 +2,11 @@
 from flask import Flask, request, jsonify
 
 from flask_cors import CORS
+
 import mysql.connector
+
 from werkzeug.utils import secure_filename
+
 import os
 import time
 #-----------------------------------------------------------
