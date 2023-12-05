@@ -1,3 +1,4 @@
+console.log('Script de Vue ejecutándose...');
 import { createApp } from 'https://unpkg.com/vue@next/dist/vue.esm-browser.js';
 
 const URL = "https://g13.pythonanywhere.com/";
@@ -34,6 +35,7 @@ const app = createApp({
                 this.precio = data.precio;
                 this.proveedor = data.proveedor;
                 this.imagen_url = data.imagen_url;
+                console.log('URL de la imagen:', 'https://www.pythonanywhere.com/user/G13/files/home/G13/mysite/static/img/' + this.imagen_url);
                 this.mostrarDatosProducto = true;
             } catch (error) {
                 console.log(error);
