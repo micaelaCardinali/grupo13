@@ -1,4 +1,4 @@
-const{createApp}= vue
+import { createApp } from 'https://unpkg.com/vue@next/dist/vue.esm-browser.js';
 
 const URL = "https://g13.pythonanywhere.com/";
 
