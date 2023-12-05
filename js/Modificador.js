@@ -29,10 +29,7 @@ const app = Vue.createApp({
                     this.cantidad = data.cantidad;
                     this.precio = data.precio;
                     this.proveedor = data.proveedor;
-        
-                    const imageUrl = 'https://www.pythonanywhere.com/user/G13/files/home/G13/mysite/static/img/' + data.imagen_url;
-                    this.descargarImagen(imageUrl);
-        
+                    this.imagen_url = data.imagen_url;
                     this.mostrarDatosProducto = true;
                 })
                 .catch(error => {
@@ -90,7 +87,11 @@ const app = Vue.createApp({
                     alert('Hubo un error al actualizar el producto. Por favor, inténtelo de nuevo.');
                 });
         },
-        
+        computed: {
+            imagenCompleta() {
+                return URL + 'static/img/' + this.imagen_url;
+            },
+        },
         limpiarFormulario() {
             this.codigo = '';
             this.descripcion = '';
