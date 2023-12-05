@@ -51,137 +51,22 @@
         </button>
     </nav>
    <section class="main-container">
-        <div class="cards-container">
+    <div class="cards-container">
+        {% for producto in data %}
             <div class="product-card">
-                <img src="./assets/productosNuevaTemporada/recto.png" alt="Jean Capri" class="product-img">
+                <img src="{{ producto.imagen }}" alt="{{ producto.nombre }}" class="product-img">
                 <div class="product-info">
                     <div>
-                        <p>$12.990</p>
-                        <p>Jean Capri</p>
+                        <p>${{ producto.precio }}</p>
+                        <p>{{ producto.nombre }}</p>
                     </div>
                     <figure>
                         <img src="./assets/icons/agregarCarrito.png" alt="">
                     </figure>
                 </div>
             </div>
-
-            <div class="product-card">
-                <img src="./assets/productosNuevaTemporada/capri.png" alt="Jean Verona" class="product-img">
-                <div class="product-info">
-                    <div>
-                        <p>$10.990</p>
-                        <p>Jean Verona</p>
-                    </div>
-                    <figure>
-                        <img src="./assets/icons/agregarCarrito.png" alt="">
-                    </figure>
-                </div>
-            </div>
-
-            <div class="product-card">
-                <img src="./assets/productosNuevaTemporada/grecia.png" alt="Falda Grecia" class="product-img">
-                <div class="product-info">
-                    <div>
-                        <p>$13.950</p>
-                        <p>Falda Grecia</p>
-                    </div>
-                    <figure>
-                        <img src="./assets/icons/agregarCarrito.png" alt="">
-                    </figure>
-                </div>
-            </div>
-
-            <div class="product-card">
-                <img src="./assets/productosNuevaTemporada/venecia.png" alt="Jean Venecia" class="product-img">
-                <div class="product-info">
-                    <div>
-                        <p>$16.990</p>
-                        <p>Jean Venecia</p>
-                    </div>
-                    <figure>
-                        <img src="./assets/icons/agregarCarrito.png" alt="">
-                    </figure>
-                </div>
-            </div>
-
-            <div class="product-card">
-                <img src="./assets/productosNuevaTemporada/tokio.png" alt="Jean Tokio" class="product-img">
-                <div class="product-info">
-                    <div>
-                        <p>$8.990</p>
-                        <p>Jean Tokio</p>
-                    </div>
-                    <figure>
-                        <img src="./assets/icons/agregarCarrito.png" alt="">
-                    </figure>
-                </div>
-            </div>
-
-            <div class="product-card">
-                <img src="./assets/productosNuevaTemporada/roma.png" alt="Campera Roma" class="product-img">
-                <div class="product-info">
-                    <div>
-                        <p>$19.990</p>
-                        <p>Campera Roma</p>
-                    </div>
-                    <figure>
-                        <img src="./assets/icons/agregarCarrito.png" alt="">
-                    </figure>
-                </div>
-            </div>
-
-            <div class="product-card">
-                <img src="./assets/productosNuevaTemporada/cosenza.png" alt="Top Cosenza" class="product-img">
-                <div class="product-info">
-                    <div>
-                        <p>$10.990</p>
-                        <p>Top Cosenza</p>
-                    </div>
-                    <figure>
-                        <img src="./assets/icons/agregarCarrito.png" alt="">
-                    </figure>
-                </div>
-            </div>
-
-            <div class="product-card">
-                <img src="./assets/productosNuevaTemporada/Milan.png" alt="Vestido Milán" class="product-img">
-                <div class="product-info">
-                    <div>
-                        <p>$14.950</p>
-                        <p>Vestido Milán</p>
-                    </div>
-                    <figure>
-                        <img src="./assets/icons/agregarCarrito.png" alt="">
-                    </figure>
-                </div>
-            </div>
-
-            <div class="product-card">
-                <img src="./assets/productosNuevaTemporada/Palermo.png" alt="Campera Palermo" class="product-img">
-                <div class="product-info">
-                    <div>
-                        <p>$22.950</p>
-                        <p>Campera Palermo</p>
-                    </div>
-                    <figure>
-                        <img src="./assets/icons/agregarCarrito.png" alt="">
-                    </figure>
-                </div>
-            </div>
-
-            <div class="product-card">
-                <img src="./assets/productosNuevaTemporada/Paris.png" alt="Top París" class="product-img">
-                <div class="product-info">
-                    <div>
-                        <p>$12.950</p>
-                        <p>Top París</p>
-                    </div>
-                    <figure>
-                        <img src="./assets/icons/agregarCarrito.png" alt="">
-                    </figure>
-                </div>
-            </div>
-        </div>
+        {% endfor %}
+    </div>
    </section><br><br>
    <footer>
     <div class="footer-container">
