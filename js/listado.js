@@ -15,7 +15,18 @@ document.addEventListener('DOMContentLoaded', function () {
                 el: '#app',
                 data: {
                     productos: data,
-                    rutaBaseImagen: rutaBaseImagen  
+                    rutaBaseImagen: rutaBaseImagen
+                },
+                mounted() {
+                    this.mostrarRutasEnConsola();
+                },
+                methods: {
+                    mostrarRutasEnConsola() {
+                        for (let producto of this.productos) {
+                            const rutaCompleta = this.rutaBaseImagen + producto.imagen_url;
+                            console.log('Ruta de la imagen:', rutaCompleta);
+                        }
+                    }
                 },
                 template: `
                     <div>
