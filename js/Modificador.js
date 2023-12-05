@@ -20,9 +20,11 @@ const app = createApp({
     methods: {
         async obtenerProducto() {
             try {
+                console.log('Obteniendo producto...');
                 const response = await fetch(URL + 'productos/' + this.codigo);
 
                 if (!response.ok) {
+                    console.error('Error en la respuesta del servidor:', response.status, response.statusText);
                     throw new Error('Error al obtener datos del Producto');
                 }
 
