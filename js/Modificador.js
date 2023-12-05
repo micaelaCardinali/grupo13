@@ -1,6 +1,9 @@
+// Importa la versión de producción de Vue.js
+import { createApp } from 'https://unpkg.com/vue@next/dist/vue.esm-browser.prod.js';
+
 const URL = "https://g13.pythonanywhere.com/";
 
-const app = Vue.createApp({
+const app = createApp({
     data() {
         return {
             codigo: '',
@@ -92,6 +95,7 @@ const app = Vue.createApp({
             imagenCompleta() {
                 return URL + 'static/img/' + this.imagen_url;
             },
+            // ... otras propiedades computadas
         },
         limpiarFormulario() {
             this.codigo = '';
@@ -107,4 +111,5 @@ const app = Vue.createApp({
     }
 });
 
+// Monta la aplicación en el elemento con el ID 'app'
 app.mount('#app');
