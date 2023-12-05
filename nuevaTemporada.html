@@ -50,24 +50,29 @@
             <span class= "br-3" ></span>
         </button>
     </nav>
-   <section class="main-container">
-    <div class="cards-container">
-        {% for producto in data %}
-            <div class="product-card">
-                <img src="{{ producto.imagen }}" alt="{{ producto.nombre }}" class="product-img">
-                <div class="product-info">
-                    <div>
-                        <p>${{ producto.precio }}</p>
-                        <p>{{ producto.nombre }}</p>
-                    </div>
-                    <figure>
-                        <img src="./assets/icons/agregarCarrito.png" alt="">
-                    </figure>
-                </div>
-            </div>
-        {% endfor %}
-    </div>
-   </section><br><br>
+    <section class="main-container">
+        <div class="cards-container">
+            <!-- Aquí es donde se mostrarán los productos -->
+            <table id="tablaProductos">
+                <thead>
+                    <tr>
+                        <th>Código</th>
+                        <th>Descripción</th>
+                        <th>Cantidad</th>
+                        <th>Precio</th>
+                        <th>Imagen</th>
+                        <th>Proveedor</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Las filas de productos se agregarán aquí mediante JavaScript -->
+                </tbody>
+            </table>
+        </div>
+    </section>
+    <script src="js/listado.js"></script>
+    <br>
+    <br>
    <footer>
     <div class="footer-container">
         <div class="footer-left">
