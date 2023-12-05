@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
     const URL = "https://g13.pythonanywhere.com/";
+    const rutaBaseImagen = "https://www.pythonanywhere.com/user/G13/files/home/G13/mysite/static/img/";
 
     fetch(URL + 'productos')
         .then(function (response) {
@@ -13,12 +14,13 @@ document.addEventListener('DOMContentLoaded', function () {
             new Vue({
                 el: '#app',
                 data: {
-                    productos: data
+                    productos: data,
+                    rutaBaseImagen: rutaBaseImagen  
                 },
                 template: `
                     <div>
                         <div v-for="producto in productos" :key="producto.codigo" class="product-card">
-                            <img :src="constructImageUrl(producto.imagen_url)" :alt="producto.descripcion" class="product-img">
+                            <img :src="rutaBaseImagen + producto.imagen_url" :alt="producto.descripcion" class="product-img">
                             <div class="product-info">
                                 <div>
                                     <p>\${{ producto.precio }}</p>
@@ -30,15 +32,7 @@ document.addEventListener('DOMContentLoaded', function () {
                             </div>
                         </div>
                     </div>
-                `,
-                methods: {
-                    constructImageUrl(imagenUrl) {
-                        const baseUrl = 'https://www.pythonanywhere.com/user/G13/files/home/G13/mysite/static/img/';
-                        const fullUrl = baseUrl + imagenUrl;
-                        console.log('Ruta de la imagen:', fullUrl);
-                        return fullUrl;
-                    }
-                }
+                `
             });
         })
         .catch(function (error) {
