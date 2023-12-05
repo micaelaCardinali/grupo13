@@ -51,6 +51,7 @@ const app = Vue.createApp({
             this.imagenUrlTemp = URL.createObjectURL(file);
         },        
         guardarCambios() {
+            console.log('Guardando cambios...');
             if (this.imagenSeleccionada && this.imagenSeleccionada.size > MAX_FILE_SIZE) {
                 alert('El tamaño del archivo de imagen es demasiado grande. Por favor, seleccione un archivo más pequeño.');
                 return;
