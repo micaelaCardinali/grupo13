@@ -9,7 +9,7 @@ const app = Vue.createApp({
             precio: '',
             proveedor: '',
             imagen_url: '',
-            imagenSeleccionada: null,  // Agrega esta línea para inicializar imagenSeleccionada
+            imagenSeleccionada: null,
             imagenUrlTemp: null,
             mostrarDatosProducto: false,
         };
@@ -19,9 +19,9 @@ const app = Vue.createApp({
             fetch(URL + 'productos/' + this.codigo)
                 .then(response => {
                     if (response.ok) {
-                        return response.json()
+                        return response.json();
                     } else {
-                        throw new Error('Error al obtener datos del Producto')
+                        throw new Error('Error al obtener datos del Producto');
                     }
                 })
                 .then(data => {
@@ -34,8 +34,8 @@ const app = Vue.createApp({
                 })
                 .catch(error => {
                     console.log(error);
-                    alert('Codigo no encontrado!');
-                })
+                    alert('Código no encontrado!');
+                });
         },
         seleccionarImagen(event) {
             const file = event.target.files[0];
@@ -58,9 +58,9 @@ const app = Vue.createApp({
             })
                 .then(response => {
                     if (response.ok) {
-                        return response.json()
+                        return response.json();
                     } else {
-                        throw new Error('Error al guardar los cambios')
+                        throw new Error('Error al guardar los cambios');
                     }
                 })
                 .then(data => {
@@ -79,9 +79,9 @@ const app = Vue.createApp({
             this.proveedor = '';
             this.precio = '';
             this.imagen_url = '';
-            this.imagenSeleccionada = null;  // Asegúrate de reiniciar imagenSeleccionada
-            this.imagenUrlTemp = '';
-            this.mostrarDatosProducto = false;  // Cambia de string a booleano
+            this.imagenSeleccionada = null;
+            this.imagenUrlTemp = null;
+            this.mostrarDatosProducto = false;
         }
     }
 });
