@@ -17,6 +17,12 @@ const app = createApp({
             mostrarDatosProducto: false,
         };
     },
+    computed: {
+        imagenCompleta() {
+            return URL + 'static/img/' + this.imagen_url;
+        },
+        // ... otras propiedades computadas
+    },
     methods: {
         obtenerProducto() {
             fetch(URL + 'productos/' + this.codigo)
@@ -94,12 +100,7 @@ const app = createApp({
                     alert('Hubo un error al actualizar el producto. Por favor, inténtelo de nuevo.');
                 });
         },
-        computed: {
-            imagenCompleta() {
-                return URL + 'static/img/' + this.imagen_url;
-            },
-            // ... otras propiedades computadas
-        },
+        
         limpiarFormulario() {
             this.codigo = '';
             this.descripcion = '';
