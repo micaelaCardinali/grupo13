@@ -1,6 +1,6 @@
 // Importa la versión de producción de Vue.js
-import { createApp } from 'https://unpkg.com/vue@next/dist/vue.esm-browser.prod.js';
-
+import { createApp } from 'https://unpkg.com/vue@next/dist/vue.esm-browser.js';
+// importamos el archivo que contiene los componentes a utilizar en nuestra aplicación
 const URL = "https://g13.pythonanywhere.com/";
 
 const app = createApp({
