@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 template: `
                     <div>
                         <div v-for="producto in productos" :key="producto.codigo" class="product-card">
-                            <img :src="'https://www.pythonanywhere.com/user/G13/files/home/G13/mysite/static/img/' + producto.imagen_url" :alt="producto.descripcion" class="product-img">
+                            <img :src="constructImageUrl(producto.imagen_url)" :alt="producto.descripcion" class="product-img">
                             <div class="product-info">
                                 <div>
                                     <p>\${{ producto.precio }}</p>
@@ -30,7 +30,15 @@ document.addEventListener('DOMContentLoaded', function () {
                             </div>
                         </div>
                     </div>
-                `
+                `,
+                methods: {
+                    constructImageUrl(imagenUrl) {
+                        const baseUrl = 'https://www.pythonanywhere.com/user/G13/files/home/G13/mysite/static/img/';
+                        const fullUrl = baseUrl + imagenUrl;
+                        console.log('Ruta de la imagen:', fullUrl);
+                        return fullUrl;
+                    }
+                }
             });
         })
         .catch(function (error) {
