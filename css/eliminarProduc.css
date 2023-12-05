@@ -1,12 +1,12 @@
 body {
     font-family: 'Montserrat', sans-serif;
-    margin: 0;
+    margin: 20px; /* Agrega un margen a los lados de la página */
     padding: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    min-height: 100vh; /* Ajustado a min-height para evitar que el contenido se desplace fuera de la vista */
+    min-height: 100vh;
 }
 
 .logo {
@@ -20,51 +20,36 @@ body {
     color: #884939;
 }
 
-section form {
-    max-width: 600px; /* Ajustado para que el formulario no sea demasiado ancho en pantallas grandes */
-    width: 100%; /* Hace que el formulario ocupe todo el ancho disponible */
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 5px;
-    border: none;
-}
-
-section form div {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 20px;
-}
-
-section form label {
-    margin-top: 15px;
-    font-size: 20px;
-    color: #884939;
-}
-
-section form select,
-section form input[type="text"],
-section form input[type="tel"],
-section form input[type="file"],
-section form textarea {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 16px;
-    width: 100%; 
-}
-section form input[type="number"] {
-    padding: 15px; /* Ajustado para hacer los campos más grandes */
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 16px;
+table {
     width: 100%;
-}
-section form input[type="file"] {
-    padding: 0;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #f0f0f0;
+    margin: 20px; /* Fondo gris claro */
+    border-radius: 5px;
 }
 
-section form input[type="submit"] {
+thead {
+    background-color: #884939; /* Color del título */
+    color: #fff; /* Texto en el título */
+}
+
+th, td {
+    border: 1px solid #884939; /* Borde del mismo color que el título */
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    border-radius: 5px 5px 0 0; /* Bordes redondeados arriba */
+}
+
+td {
+    border-radius: 0 0 5px 5px; /* Bordes redondeados abajo */
+}
+
+/* Ajuste para el botón dentro de la tabla */
+td button {
     margin-top: 15px; 
     background-color: #884939;
     color: #fff;
@@ -76,34 +61,12 @@ section form input[type="submit"] {
     display: inline-block;
 }
 
-section form input[type="submit"]:hover {
+td button:hover {
     background-color: #fff;
-    color: #884939;
+    color: #884939; 
+   
+   
 }
-
-section form input[type="submit"],
-section form a button {
-    background-color: #884939;
-    margin-top: 15px;
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    text-decoration: none; 
-    display: inline-block; 
-    width: 100%; 
-    box-sizing: border-box;
-    font-size: 18px;
-
-}
-
-section form input[type="submit"]:hover,
-section form a button:hover {
-    background-color: #fff;
-    color: #884939;
-}
-
 
 .footer-container {
     display: flex;
