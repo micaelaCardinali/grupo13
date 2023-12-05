@@ -17,11 +17,7 @@ const app = createApp({
             mostrarDatosProducto: false,
         };
     },
-    computed: {
-        imagenCompleta() {
-            return 'https://www.pythonanywhere.com/user/G13/files/home/G13/mysite/static/img/' + this.imagen_url;
-        },
-    },
+
     methods: {
         obtenerProducto() {
             fetch(URL + 'productos/' + this.codigo)
