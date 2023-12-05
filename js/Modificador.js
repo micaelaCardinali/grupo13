@@ -29,7 +29,7 @@ const app = Vue.createApp({
                     this.cantidad = data.cantidad;
                     this.precio = data.precio;
                     this.proveedor = data.proveedor;
-                    this.imagen_url = data.imagen_url;
+                    this.imagen_url = 'https://www.pythonanywhere.com/user/G13/files/home/G13/mysite/static/img/' + data.imagen_url;
                     this.mostrarDatosProducto = true;
                 })
                 .catch(error => {
