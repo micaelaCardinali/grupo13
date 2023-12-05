@@ -29,7 +29,7 @@
     </section>
     <h2> DATOS DEL PRODUCTO</h2>
     <section>
-    <div v-if="mostrasDatosProducto">
+    <div v-if="mostrarDatosProducto">
         <form @submit.prevent="guardarCambios">
             <label for="descripcionModificar">Descripción:</label>
             <input type="text" id="descripcionModificar" v-model="descripcion" required><br>
