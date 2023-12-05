@@ -45,7 +45,8 @@
             <img v-if="imagenSeleccionada" :src="imagenUrlTemp" alt="vista previa de la nueva imagen" style="max-width: 200px;">
 
             <label for="nuevaImagen">Nueva Imagen</label>
-            <input type="file" id="nuevaImagen" @change="seleccionarImagen"><br>
+            <input type="file" id="nuevaImagen" @change="seleccionarImagen" accept="image/*"><br>
+
             
             <label for="proveModificar">Proveedor:</label>
             <input type="number" id="proveModificar" v-model="proveedor" required><br>
