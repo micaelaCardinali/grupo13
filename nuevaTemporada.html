@@ -9,6 +9,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/styleNuevaTemporada.css">
     <title>MUNDO - Nueva Temporada</title>
+    <!-- Agrega la biblioteca de Vue.js desde CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
 </head>
 <body>
     <nav>
@@ -45,10 +47,9 @@
     </nav>
 
     <section class="main-container">
-        <div class="cards-container">
-            
-        </div>
-    </section><br><br>
+        <!-- Contenedor donde Vue.js generará dinámicamente las tarjetas de productos -->
+        <div class="cards-container" id="app"></div>
+    </section>
 
     <footer>
         <div class="footer-container">
@@ -63,12 +64,10 @@
                 </ul>
             </div>
         </div>
-    </footer><br>
+    </footer>
 
     <script src="js/menuhamburguesa.js"></script>
+    <!-- Script listado.js que utiliza Vue.js -->
     <script src="js/listado.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {});
-    </script>
 </body>
 </html>

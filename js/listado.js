@@ -10,25 +10,29 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         })
         .then(function (data) {
-            let tablaProductos = document.getElementById('tablaProductos');
-            let tbody = tablaProductos.querySelector('tbody');
-
-            // Limpiar el contenido actual de la tabla
-            tbody.innerHTML = '';
-
-            for (let producto of data) {
-                // Crear una fila de la tabla con la información del producto
-                let fila = document.createElement('tr');
-                fila.innerHTML = '<td>' + producto.codigo + '</td>' +
-                    '<td>' + producto.descripcion + '</td>' +
-                    '<td align="right">' + producto.cantidad + '</td>' +
-                    '<td align="right">' + producto.precio + '</td>' +
-                    '<td><img src=static/img/' + producto.imagen_url + '</td>' +
-                    '<td align="right">' + producto.proveedor + '</td>';
-                
-                // Agregar la fila a la tabla
-                tbody.appendChild(fila);
-            }
+            new Vue({
+                el: '#app', // El ID del contenedor en el HTML
+                data: {
+                    productos: data
+                },
+                template: `
+                    <div>
+                        <div v-for="producto in productos" :key="producto.codigo" class="product-card">
+                            <img :src="producto.imagen" :alt="producto.nombre" class="product-img">
+                            <div class="product-info">
+                                <div>
+                                    <p><del>\${{ producto.precio_anterior }}</del></p>
+                                    <p>\${{ producto.precio_actual }}</p>
+                                    <p>{{ producto.nombre }}</p>
+                                </div>
+                                <figure>
+                                    <img src="./assets/icons/agregarCarrito.png" alt="">
+                                </figure>
+                            </div>
+                        </div>
+                    </div>
+                `
+            });
         })
         .catch(function (error) {
             alert('Error al obtener el Producto');
