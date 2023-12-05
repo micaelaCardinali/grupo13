@@ -19,7 +19,7 @@ const app = createApp({
     },
     computed: {
         imagenCompleta() {
-            return URL + 'static/img/' + this.imagen_url;
+            return 'https://www.pythonanywhere.com/user/G13/files/home/G13/mysite/' + 'static/img/' + this.imagen_url;
         },
         // ... otras propiedades computadas
     },
