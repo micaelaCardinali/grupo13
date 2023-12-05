@@ -37,6 +37,14 @@ const app = Vue.createApp({
                     alert('Código no encontrado!');
                 });
         },
+        descargarImagen(url) {
+            const img = new Image();
+            img.crossOrigin = 'Anonymous';
+            img.onload = () => {
+                this.imagen_url = url;
+            };
+            img.src = url;
+        },
         seleccionarImagen(event) {
             const file = event.target.files[0];
             this.imagenSeleccionada = file;
