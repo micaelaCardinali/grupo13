@@ -20,13 +20,16 @@ const app = createApp({
     methods: {
         obtenerProducto() {
             fetch(URL + 'productos/' + this.codigo)
-                .then(response => {
-                    if (response.ok) {
-                        return response.json();
-                    } else {
-                        throw new Error('Error al obtener datos del Producto');
-                    }
-                })
+            .then(response => {
+                if (response.ok) {
+                    return response.json();  // Devuelve la promesa de JSON
+                } else {
+                    throw new Error('Error al obtener datos del Producto');
+                }
+            })
+            .then(data => {
+                return data;
+            })
                 .then(data => {
                     this.descripcion = data.descripcion;
                     this.cantidad = data.cantidad;
