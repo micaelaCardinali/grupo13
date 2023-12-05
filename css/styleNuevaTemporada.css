@@ -84,21 +84,15 @@ nav {
     font-size: 0.6rem;
 }
 
-/* .cards-container {
+.cards-container {
     display: grid;
     grid-template-columns: repeat(auto-fill, 240px);
     gap: 26px;
     place-content: center;
-} */
-.cards-container {
-    display: flex;  
-    flex-wrap: wrap;  
-    justify-content: space-around;
 }
 
 .product-card {
     width: 240px;
-    margin-bottom: 20px;
 }
 
 .product-card img {
