@@ -9,7 +9,7 @@ const app = Vue.createApp({
             precio: '',
             proveedor: '',
             imagen_url: '',
-            imagenSeleccionada: null,
+            imagenSeleccionada: null,  // Agrega esta línea para inicializar imagenSeleccionada
             imagenUrlTemp: null,
             mostrarDatosProducto: false,
         };
@@ -34,8 +34,8 @@ const app = Vue.createApp({
                 })
                 .catch(error => {
                     console.log(error);
-                    alert('Código no encontrado!');
-                });
+                    alert('Codigo no encontrado!');
+                })
         },
         seleccionarImagen(event) {
             const file = event.target.files[0];
@@ -44,6 +44,7 @@ const app = Vue.createApp({
         },
         guardarCambios() {
             const formData = new FormData();
+            formData.append('codigo', this.codigo);
             formData.append('descripcion', this.descripcion);
             formData.append('cantidad', this.cantidad);
             formData.append('proveedor', this.proveedor);
@@ -78,9 +79,9 @@ const app = Vue.createApp({
             this.proveedor = '';
             this.precio = '';
             this.imagen_url = '';
-            this.imagenSeleccionada = null;
-            this.imagenUrlTemp = null;
-            this.mostrarDatosProducto = false;
+            this.imagenSeleccionada = null;  // Asegúrate de reiniciar imagenSeleccionada
+            this.imagenUrlTemp = '';
+            this.mostrarDatosProducto = false;  // Cambia de string a booleano
         }
     }
 });
