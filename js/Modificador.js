@@ -19,16 +19,15 @@ const app = createApp({
     },
     computed: {
         imagenCompleta() {
-            return 'https://www.pythonanywhere.com/user/G13/files/home/G13/mysite/' + 'static/img/' + this.imagen_url;
+            return URL + 'static/img/' + this.imagen_url;
         },
-        // ... otras propiedades computadas
     },
     methods: {
         obtenerProducto() {
             fetch(URL + 'productos/' + this.codigo)
             .then(response => {
                 if (response.ok) {
-                    return response.json();  // Devuelve la promesa de JSON
+                    return response.json();
                 } else {
                     throw new Error('Error al obtener datos del Producto');
                 }
@@ -115,5 +114,4 @@ const app = createApp({
     }
 });
 
-// Monta la aplicación en el elemento con el ID 'app'
 app.mount('#app');
