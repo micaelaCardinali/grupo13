@@ -11,19 +11,18 @@ document.addEventListener('DOMContentLoaded', function () {
         })
         .then(function (data) {
             new Vue({
-                el: '#app', // El ID del contenedor en el HTML
+                el: '#app',
                 data: {
                     productos: data
                 },
                 template: `
                     <div>
                         <div v-for="producto in productos" :key="producto.codigo" class="product-card">
-                            <img :src="producto.imagen" :alt="producto.nombre" class="product-img">
+                            <img :src="'https://www.pythonanywhere.com/user/G13/files/home/G13/mysite/static/img/' + producto.imagen_url" :alt="producto.descripcion" class="product-img">
                             <div class="product-info">
                                 <div>
-                                    <p><del>\${{ producto.precio_anterior }}</del></p>
-                                    <p>\${{ producto.precio_actual }}</p>
-                                    <p>{{ producto.nombre }}</p>
+                                    <p>\${{ producto.precio }}</p>
+                                    <p>{{ producto.descripcion }}</p>
                                 </div>
                                 <figure>
                                     <img src="./assets/icons/agregarCarrito.png" alt="">
