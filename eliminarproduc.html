@@ -33,7 +33,7 @@
                     <td>{{ producto.codigo }}</td>
                     <td>{{ producto.descripcion }}</td>
                     <td>{{ producto.cantidad }}</td>
-                    <td style="text-align: right;">{{ producto.precio }}</td>
+                    <td style="text-align: right;">{{ parseFloat(producto.precio).toFixed(2) }}</td>
                     <td><button @click="eliminarProducto(producto.codigo)">Eliminar</button></td>
                 </tr>
             </tbody>
