@@ -17,9 +17,6 @@ document.addEventListener('DOMContentLoaded', function () {
                     productos: data,
                     rutaBaseImagen: rutaBaseImagen
                 },
-                mounted() {
-                    this.mostrarRutasEnConsola();
-                },
                 methods: {
                     mostrarRutasEnConsola() {
                         for (let producto of this.productos) {
@@ -29,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     }
                 },
                 template: `
-                    <div>
+                    <div class="cards-container">
                         <div v-for="producto in productos" :key="producto.codigo" class="product-card">
                             <img :src="rutaBaseImagen + producto.imagen_url" :alt="producto.descripcion" class="product-img">
                             <div class="product-info">
