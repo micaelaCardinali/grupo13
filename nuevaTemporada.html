@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/styleNuevaTemporada.css">
+    <title>MUNDO - Nueva Temporada</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+</head>
+<body>
+    <nav>
+        <img src="./assets/icons/menu.svg" alt="menu" class="menu">
+        <a href="./index.html"><img src="./assets/icons/./logoMundo.svg" alt="logo" class="logo"></a>
+        <ul class="enlaces-menu">
+            <li>
+                <a href="./nuevaTemporada.html">Nueva Temporada</a>
+            </li>
+            <li>
+                <a href="./rebajas.html">Rebajas</a>
+            </li>
+            <li>
+                <a href="./sucursales.html">Sucursales</a>
+            </li>
+            <li>
+                <a href="contacto.html">Contactanos</a>
+            </li>
+            <li>
+                <a href="./iniciarSesion.html">Iniciar Sesión</a>
+            </li>
+            <li>
+                <div class="carrito">
+                    <img src="./assets/icons/carrito.svg" alt="shopping">
+                    <div>0</div>
+                </div>
+            </li>
+        </ul>
+        <button class="ham" type="button">
+            <span class="br-1"></span> 
+            <span class="br-2"></span>
+            <span class="br-3"></span>
+        </button>
+    </nav>
+
+    <section class="main-container">
+                <div class="cards-container" id="app"></div>
+    </section>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-left">
+                <p>Hecho con 💙 para codo a codo.</p>
+            </div>
+            <div class="footer-right">
+                <ul>
+                    <li><a href="./contacto.html">Trabajá con Nosotros</a></li>
+                    <li><a href="api.html">Carga de productos</a></li>
+                    <li><a href="./contacto.html">Contacto</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/menuhamburguesa.js"></script>
+    <script src="js/listado.js"></script>
+</body>
+</html>
