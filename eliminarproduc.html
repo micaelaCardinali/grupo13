@@ -15,8 +15,11 @@
 </head>
 
 <body>
-    <div id="app" class="ingresar">
-        <img src="./assets/icons/logoMundo.svg" alt="logo" class="logo">
+    <div class="ingresar">
+        <a href="index.html">
+            <img src="./assets/icons/logoMundo.svg" alt="logo" class="logo">
+        </a>
+    </div>
         <h1 class="titulo">ELIMINAR PRODUCTO</h1>
         <table>
             <thead>
@@ -34,12 +37,12 @@
                     <td>{{ producto.descripcion }}</td>
                     <td>{{ producto.cantidad }}</td>
                     <td style="text-align: right;">{{ parseFloat(producto.precio).toFixed(2) }}</td>
-                    <td><button @click="eliminarProducto(producto.codigo)">Eliminar</button></td>
+                    <td><button @click="eliminarProducto(producto.codigo)" >Eliminar</button></td>
                 </tr>
             </tbody>
         </table>
         <div class="contedor-centrado">
-            <a href="api.html"> Menu Principal</a>
+            <a  href="api.html"> Menu Principal</a>
         </div>
     </div>
 

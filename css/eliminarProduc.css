@@ -1,6 +1,6 @@
 body {
     font-family: 'Montserrat', sans-serif;
-    margin: 20px; /* Agrega un margen a los lados de la página */
+    margin: 20px;
     padding: 0;
     display: flex;
     flex-direction: column;
@@ -12,9 +12,8 @@ body {
 .logo {
     width: 400px;
     margin-bottom: 20px;
-    max-width: 100%; /* Asegura que el logo no exceda el ancho del contenedor */
+    max-width: 100%;
 }
-
 
 .titulo {
     color: #884939;
@@ -22,33 +21,26 @@ body {
 
 table {
     width: 100%;
-    border-collapse: collapse;
+    border-collapse: separate; /* Utiliza "separate" en lugar de "collapse" para permitir bordes redondeados */
+    border-spacing: 0; /* Elimina el espacio entre celdas */
     margin-top: 20px;
     background-color: #f0f0f0;
-    margin: 20px; /* Fondo gris claro */
+    margin: 20px;
     border-radius: 5px;
+    overflow: hidden; /* Evita que los bordes redondeados se vean afectados por el contenido */
 }
 
 thead {
-    background-color: #884939; /* Color del título */
-    color: #fff; /* Texto en el título */
+    background-color: #884939;
+    color: #fff;
 }
 
 th, td {
-    border: 1px solid #884939; /* Borde del mismo color que el título */
+    border: none; /* Elimina los bordes de las celdas */
     padding: 10px;
     text-align: left;
 }
 
-th {
-    border-radius: 5px 5px 0 0; /* Bordes redondeados arriba */
-}
-
-td {
-    border-radius: 0 0 5px 5px; /* Bordes redondeados abajo */
-}
-
-/* Ajuste para el botón dentro de la tabla */
 td button {
     margin-top: 15px; 
     background-color: #884939;
@@ -64,8 +56,25 @@ td button {
 td button:hover {
     background-color: #fff;
     color: #884939; 
-   
-   
+}
+.contenedor-centrado {
+    background-color: #884939;
+    margin-top: 15px;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 18px;
+}
+
+.contenedor-centrado:hover {
+    background-color: #fff;
+    color: #884939;
 }
 
 .footer-container {
@@ -98,8 +107,8 @@ td button:hover {
 
 footer {
     width: 100%;
-    position: relative; 
-    margin-top: auto; 
+    position: relative;
+    margin-top: auto;
 }
 
 @media only screen and (max-width: 600px) {

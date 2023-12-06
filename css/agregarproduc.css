@@ -6,13 +6,13 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    min-height: 100vh; /* Ajustado a min-height para evitar que el contenido se desplace fuera de la vista */
+    min-height: 100vh;
 }
 
 .logo {
     width: 400px;
     margin-bottom: 20px;
-    max-width: 100%; /* Asegura que el logo no exceda el ancho del contenedor */
+    max-width: 100%;
 }
 
 .titulo {
@@ -20,8 +20,8 @@ body {
 }
 
 section form {
-    max-width: 600px; /* Ajustado para que el formulario no sea demasiado ancho en pantallas grandes */
-    width: 100%; /* Hace que el formulario ocupe todo el ancho disponible */
+    max-width: 600px;
+    width: 100%;
     margin: 0 auto;
     padding: 20px;
     background-color: #fff;
@@ -50,38 +50,23 @@ section form textarea {
     border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 16px;
-    width: 100%; 
+    width: 100%;
 }
+
 section form input[type="number"] {
-    padding: 15px; /* Ajustado para hacer los campos más grandes */
+    padding: 15px;
     border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 16px;
     width: 100%;
 }
+
 section form input[type="file"] {
     padding: 0;
 }
 
-section form input[type="submit"] {
-    margin-top: 15px; 
-    background-color: #884939;
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    text-decoration: none;
-    display: inline-block;
-}
-
-section form input[type="submit"]:hover {
-    background-color: #fff;
-    color: #884939;
-}
-
-section form input[type="submit"],
-section form a button {
+section form button.boton-menu,
+section form a.button.boton-menu {
     background-color: #884939;
     margin-top: 15px;
     color: #fff;
@@ -89,20 +74,18 @@ section form a button {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    text-decoration: none; 
-    display: inline-block; 
-    width: 100%; 
+    text-decoration: none;
+    display: inline-block;
+    width: 100%;
     box-sizing: border-box;
     font-size: 18px;
-
 }
 
-section form input[type="submit"]:hover,
-section form a button:hover {
+section form button.boton-menu:hover,
+section form a.button.boton-menu:hover {
     background-color: #fff;
     color: #884939;
 }
-
 
 .footer-container {
     display: flex;
@@ -134,8 +117,8 @@ section form a button:hover {
 
 footer {
     width: 100%;
-    position: relative; /* Cambiado a posición relativa para evitar que el pie de página se solape con el contenido */
-    margin-top: auto; /* Asegura que el pie de página esté pegado al fondo */
+    position: relative;
+    margin-top: auto;
 }
 
 @media only screen and (max-width: 600px) {
