@@ -67,9 +67,6 @@ document.addEventListener('DOMContentLoaded', function () {
                                 </tr>
                             </tbody>
                         </table>
-                        <div class="contedor-centrado">
-                            <a href="api.html">Menu Principal</a>
-                        </div>
                     </div>
                 `
             });
