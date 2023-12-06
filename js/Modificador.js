@@ -1,4 +1,5 @@
 console.log('Script de Vue ejecutándose...');
+
 import { createApp } from 'https://unpkg.com/vue@next/dist/vue.esm-browser.js';
 
 const URL = "https://g13.pythonanywhere.com/";
@@ -52,31 +53,32 @@ const app = createApp({
         async guardarCambios() {
             try {
                 console.log('Guardando cambios...');
-        
+
                 if (this.imagenSeleccionada && this.imagenSeleccionada.size > MAX_FILE_SIZE) {
                     alert('El tamaño del archivo de imagen es demasiado grande. Por favor, seleccione un archivo más pequeño.');
                     return;
                 }
-        
+
                 const formData = new FormData();
+                formData.append('codigo', this.codigo);
                 formData.append('descripcion', this.descripcion);
                 formData.append('cantidad', this.cantidad);
                 formData.append('proveedor', this.proveedor);
                 formData.append('precio', this.precio);
-        
+
                 if (this.imagenSeleccionada) {
                     formData.append('imagen', this.imagenSeleccionada, this.imagenSeleccionada.name);
                 }
-        
+
                 const response = await fetch(URL + 'productos/' + this.codigo, {
                     method: 'PUT',
                     body: formData,
                 });
-        
+
                 if (!response.ok) {
                     throw new Error('Error al guardar los cambios');
                 }
-        
+
                 const data = await response.json();
                 alert('Producto actualizado correctamente.');
                 this.limpiarFormulario();
@@ -85,7 +87,6 @@ const app = createApp({
                 alert('Hubo un error al actualizar el producto. Por favor, inténtelo de nuevo.');
             }
         },
-        
 
         limpiarFormulario() {
             this.codigo = '';
