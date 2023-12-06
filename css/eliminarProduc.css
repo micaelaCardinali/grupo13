@@ -57,7 +57,7 @@ td button:hover {
     background-color: #fff;
     color: #884939; 
 }
-.contenedor-centrado {
+.boton-menu {
     background-color: #884939;
     margin-top: 15px;
     color: #fff;
@@ -72,7 +72,7 @@ td button:hover {
     font-size: 18px;
 }
 
-.contenedor-centrado:hover {
+.boton-menu:hover {
     background-color: #fff;
     color: #884939;
 }
