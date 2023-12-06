@@ -111,18 +111,45 @@ footer {
     margin-top: auto;
 }
 
+@media only screen and (min-width: 1025px) {
+    table {
+        font-size: 16px;
+    }
+
+    th, td {
+        padding: 15px;
+    }
+
+    .boton-menu {
+        font-size: 18px;
+    }
+}
+
 @media only screen and (max-width: 600px) {
-    .logo {
-        width: 300px;
+    th, td {
+        display: block;
+        width: 100%;
+        box-sizing: border-box;
     }
 
-    .botones button {
-        font-size: 24px;
+    thead, tbody, th, td, tr {
+        display: block; /* Alinea las celdas y filas una debajo de la otra */
+    }
+
+    th {
+        position: absolute;
+        top: -9999px; /* Mueve las etiquetas de encabezado fuera de la pantalla */
+    }
+
+    tr {
+        margin-bottom: 15px; /* Agrega espacio entre las filas */
     }
 }
 
-@media only screen and (min-width: 601px) and (max-width: 1024px) {
-    .logo {
-        width: 350px;
+/* Estilos para el título en pantallas pequeñas */
+@media only screen and (max-width: 600px) {
+    .titulo {
+        font-size: 24px; /* Ajusta el tamaño del título */
     }
 }
+
