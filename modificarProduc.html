@@ -19,9 +19,9 @@
     <h1 class="titulo"> MODIFICAR PRODUCTO</h1>
     <section>
         <div id="app">
-            <form @submit.prevent="ObtenerProducto">
+            <form @submit.prevent="obtenerProducto">
                 <label for="codigo">Código:</label>
-                <input type="text" v-model="codigo" required><br>
+                <input type="text" v-model="codigo" required id="codigo"><br>
                 <button type="submit">Modificar Producto</button>
                 <a href="api.html"><button type="button">Menú Principal</button></a>
             </form>
@@ -29,7 +29,7 @@
     </section>
     <h2> DATOS DEL PRODUCTO</h2>
     <section>
-    <div v-if="mostrasDatosProducto">
+    <div v-if="mostrarDatosProducto">
         <form @submit.prevent="guardarCambios">
             <label for="descripcionModificar">Descripción:</label>
             <input type="text" id="descripcionModificar" v-model="descripcion" required><br>
@@ -40,15 +40,17 @@
             <label for="precioModificar">Precio:</label>
             <input type="number" step="0.01" id="precioModificar" v-model="precio" required><br>
 
-            <img v-if="imagen_url && !imagenSeleccionada" :src="'static/img/' + imagen_url" alt="imagen del producto" style="max-width: 200px;">
+            <img v-if="imagen_url && !imagenSeleccionada" v-bind:src="'https://www.pythonanywhere.com/user/G13/files/home/G13/mysite/static/img/' + imagen_url" alt="imagen del producto" style="max-width: 200px;">
 
-            <img v-if="imagenSeleccionada" :src="imagenUrlTemp" alt="vista previa de la nueva imagen" style="max-width: 200px;">
+
+            <img v-if="imagenSeleccionada" v-bind:src="imagenUrlTemp" alt="vista previa de la nueva imagen" style="max-width: 200px;">
 
             <label for="nuevaImagen">Nueva Imagen</label>
-            <input type="file" id="nuevaImagen" @change="seleccionarImagen"><br>
+            <input type="file" id="nuevaImagen" @change="seleccionarImagen" accept="image/*"><br>
+
             
             <label for="proveModificar">Proveedor:</label>
-            <input type="number" id="proveModificar" v-model="proveedor" required><br>
+            <input type="text" id="proveModificar" v-model="proveedor" required><br>
             
             <button type="submit">GUARDAR CAMBIOS</button>
             <a><button href="modificarProduc.html">Cancelar</button></a>
@@ -56,8 +58,8 @@
     </div>
 </section>
 
-    <script src="js/Modificador.js"></script>
-    <script src="https://unpkg.com/vue@next"></script>
+    <script type="module" src="js/Modificador.js"></script>
+    <script src="https://unpkg.com/vue@next/dist/vue.global.prod.js"></script>
 
     <footer>
         <div class="footer-container">

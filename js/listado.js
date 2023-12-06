@@ -1,23 +1,53 @@
-const URL = "https://g13.pythonanywhere.com/"
+document.addEventListener('DOMContentLoaded', function () {
+    const URL = "https://g13.pythonanywhere.com/";
+    const rutaBaseImagen = "https://www.pythonanywhere.com/user/G13/files/home/G13/mysite/static/img/";
 
-fetch(URL + 'productos')
-    .then(function (response) {
-        if (response.ok) {
-            return response.json();
-        } else {
-            throw new Error('Error al obtener productos.')
-        }
-    })
-    .then(function (data) {
-        let tablaProductos = document.getElementById('tablaProductos');
-        for (let producto of data) {
-            let fila = document.createElement('tr');
-            fila.innerHTML = '<td>' + producto.codigo + '</td>' + '<td>' + producto.descripcion + '</td>' + '<td align="right">' + producto.cantidad + '</td>' + '<td align="right">' + producto.precio + '</td>' + '<td><img src=static/img/' + producto.imagen_url +'</td>' + '<td align="right">' + producto.proveedor + '</td>';
-
-            tablaProductos.appendChild(fila);
-        }
-})
-    .catch(function (error) {
-        alert('Error al agregar el Producto');
-        console.error('Error:', error);
-    })
+    fetch(URL + 'productos')
+        .then(function (response) {
+            if (response.ok) {
+                return response.json();
+            } else {
+                throw new Error('Error al obtener productos.');
+            }
+        })
+        .then(function (data) {
+            new Vue({
+                el: '#app',
+                data: {
+                    productos: data,
+                    rutaBaseImagen: rutaBaseImagen
+                },
+                mounted() {
+                    this.mostrarRutasEnConsola();
+                },
+                methods: {
+                    mostrarRutasEnConsola() {
+                        for (let producto of this.productos) {
+                            const rutaCompleta = this.rutaBaseImagen + producto.imagen_url;
+                            console.log('Ruta de la imagen:', rutaCompleta);
+                        }
+                    }
+                },
+                template: `
+                    <div>
+                        <div v-for="producto in productos" :key="producto.codigo" class="product-card">
+                            <img :src="rutaBaseImagen + producto.imagen_url" :alt="producto.descripcion" class="product-img">
+                            <div class="product-info">
+                                <div>
+                                    <p>\${{ producto.precio }}</p>
+                                    <p>{{ producto.descripcion }}</p>
+                                </div>
+                                <figure>
+                                    <img src="./assets/icons/agregarCarrito.png" alt="">
+                                </figure>
+                            </div>
+                        </div>
+                    </div>
+                `
+            });
+        })
+        .catch(function (error) {
+            alert('Error al obtener el Producto');
+            console.error('Error:', error);
+        });
+});

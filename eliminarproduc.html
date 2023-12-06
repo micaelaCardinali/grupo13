@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,38 +13,38 @@
     <link rel="shortcut icon" href="" type="image/x-icon">
     <title>MUNDO</title>
 </head>
+
 <body>
-    <div class="ingresar">
+    <div id="app" class="ingresar">
         <img src="./assets/icons/logoMundo.svg" alt="logo" class="logo">
-    </div>
-    <h1 class="titulo"> ELIMINAR PRODUCTO</h1>
-    <table>
-        <thead>
-            <tr>
+        <h1 class="titulo">ELIMINAR PRODUCTO</h1>
+        <table>
+            <thead>
+                <tr>
                     <th>Codigo</th>
                     <th>Descripción</th>
                     <th>Cantidad</th>
-                    <th> align= "rigth" > Precio</th>
-                    <th> Acciones</th>   
+                    <th align="right">Precio</th>
+                    <th>Acciones</th>
                 </tr>
-
-        </thead>
-        <tbody>
-            <tr v-for="@producto in productos">
-                <td>{{ producto.codigo}}</td>
-                <td>{{producto.descripción}}</td>
-                <td>{{producto.cantidad}}</td>
-                <td style="text-align: right;">{{producto.precio}}</td>
-                <td> <button @click="eliminarProducto(producto.codigo)">Eliminar</button></td> 
-            </tr>
-        <tbody>
-    </table>
-    <div class="contedor-centrado">
-        <a href="api.html"> Menu Principal</a>
+            </thead>
+            <tbody>
+                <tr v-for="producto in productos" :key="producto.codigo">
+                    <td>{{ producto.codigo }}</td>
+                    <td>{{ producto.descripcion }}</td>
+                    <td>{{ producto.cantidad }}</td>
+                    <td style="text-align: right;">{{ parseFloat(producto.precio).toFixed(2) }}</td>
+                    <td><button @click="eliminarProducto(producto.codigo)">Eliminar</button></td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="contedor-centrado">
+            <a href="api.html"> Menu Principal</a>
+        </div>
     </div>
-    
-    <script src="js/eliminar.js"></script>
+
     <script src="https://unpkg.com/vue@next"></script>
+    <script src="js/eliminar.js"></script>
 
     <footer>
         <div class="footer-container">
@@ -60,4 +61,5 @@
         </div>
     </footer><br>
 </body>
+
 </html>
