@@ -21,26 +21,7 @@
         </a>
     </div>
         <h1 class="titulo">ELIMINAR PRODUCTO</h1>
-        <table>
-            <thead>
-                <tr>
-                    <th>Codigo</th>
-                    <th>Descripción</th>
-                    <th>Cantidad</th>
-                    <th align="right">Precio</th>
-                    <th>Acciones</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr v-for="producto in productos" :key="producto.codigo">
-                    <td>{{ producto.codigo }}</td>
-                    <td>{{ producto.descripcion }}</td>
-                    <td>{{ producto.cantidad }}</td>
-                    <td style="text-align: right;">{{ parseFloat(producto.precio).toFixed(2) }}</td>
-                    <td><button @click="eliminarProducto(producto.codigo)" >Eliminar</button></td>
-                </tr>
-            </tbody>
-        </table>
+        
         <a href="api.html"><button type="button"class="boton-menu" >Menú Principal</button></a>
     </div>
     <div id="app"></div>
