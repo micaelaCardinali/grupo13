@@ -44,24 +44,21 @@
 
             <img v-if="imagen_url && !imagenSeleccionada" v-bind:src="'https://www.pythonanywhere.com/user/G13/files/home/G13/mysite/static/img/' + imagen_url" alt="imagen del producto" style="max-width: 200px;">
 
-
             <img v-if="imagenSeleccionada" v-bind:src="imagenUrlTemp" alt="vista previa de la nueva imagen" style="max-width: 200px;">
 
             <label for="nuevaImagen">Nueva Imagen</label>
             <input type="file" id="nuevaImagen" @change="seleccionarImagen" accept="image/*"><br>
 
-            
             <label for="proveModificar">Proveedor:</label>
             <input type="text" id="proveModificar" v-model="proveedor" required><br>
             
             <button type="submit">GUARDAR CAMBIOS</button>
-            <a><button href="modificarProduc.html">Cancelar</button></a>
+            <a href="modificarProduc.html"><button type="button">Cancelar</button></a>
         </form>
     </div>
 </section>
 
     <script type="module" src="js/Modificador.js"></script>
-    <script src="https://unpkg.com/vue@next/dist/vue.global.prod.js"></script>
 
     <footer>
         <div class="footer-container">
