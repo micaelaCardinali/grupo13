@@ -25,6 +25,7 @@
                 <label for="codigo">Código:</label>
                 <input type="text" v-model="codigo" required id="codigo"><br>
                 <button type="submit">Modificar Producto</button>
+                <a href="api.html"><button type="button">Menú Principal</button></a>
                 <h2> DATOS DEL PRODUCTO</h2>
                 <div v-if="mostrarDatosProducto">
                     <form @submit.prevent="guardarCambios">
@@ -50,7 +51,7 @@
                         <button type="submit">GUARDAR CAMBIOS</button>
                         <a href="modificarProduc.html"><button type="button">Cancelar</button></a>
                     </form>
-                    <a href="api.html"><button type="button">Menú Principal</button></a>
+                    
                 </div>
 
             </form>
