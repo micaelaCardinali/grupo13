@@ -34,7 +34,7 @@ document.getElementById('formulario').addEventListener('submit', function (event
             document.getElementById('descripcion').value = "";
             document.getElementById('cantidad').value = "";
             document.getElementById('precio').value = "";
-            document.getElementById('imagen').value = "";
-            document.getElementById('proveedor').value = "";
+            document.getElementById('imagenProducto').value = ""; 
+            document.getElementById('proveedorProducto').value = "";  
         });
 })
