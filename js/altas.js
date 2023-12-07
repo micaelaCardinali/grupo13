@@ -8,7 +8,7 @@ document.getElementById('formulario').addEventListener('submit', function (event
     formData.append('descripcion', document.getElementById('descripcion').value);
     formData.append('cantidad', document.getElementById('cantidad').value);
     formData.append('precio', document.getElementById('precio').value);
-    formData.append('imagen', document.getElementById('imagenProducto').files[0]);
+    formData.append('imagen', document.getElementById('imagen').files[0]);
     formData.append('proveedor', document.getElementById('proveedorProducto').value);
 
     fetch(URL + '/productos', {
