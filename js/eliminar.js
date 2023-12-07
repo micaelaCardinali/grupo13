@@ -64,7 +64,8 @@ document.addEventListener('DOMContentLoaded', function () {
                                     <td>{{ producto.cantidad }}</td>
                                     <td style="text-align: right;">{{ parseFloat(producto.precio).toFixed(2) }}</td>
                                     <td><button @click="eliminarProducto(producto.codigo)">Eliminar</button></td>
-                                </tr>
+                                    <td class=linea></td>
+                                    </tr>
                             </tbody>
                         </table>
                     </div>

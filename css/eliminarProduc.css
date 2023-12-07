@@ -151,5 +151,9 @@ footer {
     .titulo {
         font-size: 24px; /* Ajusta el tamaño del título */
     }
+    .linea {
+        border: #884939;
+        border-bottom: 1px solid;
+    }
 }
 
