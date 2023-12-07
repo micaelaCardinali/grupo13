@@ -28,7 +28,7 @@ document.getElementById('formulario').addEventListener('submit', function (event
     .catch(function (error) {
         alert('Error al agregar producto.');
         console.error('Error', error);
-    });
+    })
     .finally(function () {
     document.getElementById('codigo').value = "";
     document.getElementById('descripcion').value = "";
