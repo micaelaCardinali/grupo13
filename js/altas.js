@@ -12,28 +12,29 @@ document.getElementById('formulario').addEventListener('submit', function (event
     formData.append('proveedor', document.getElementById('proveedor').value);
 
     fetch(URL + 'productos', {
-        method: 'POST',
-        body: formData
+    method: 'POST',
+    body: formData
     })
     .then(function (response) {
         if (response.ok) {
-            return response.json();
+                return response.json();
         } else {
-            throw new Error('Error al agregar producto.');
+                throw new Error('Error al agregar producto.');
         }
     })
-    .then(function () {
+    .then(function(){
         alert('Producto agregado Correctamente!');
-        // Limpiar los campos después de un envío exitoso
-        document.getElementById('codigo').value = "";
-        document.getElementById('descripcion').value = "";
-        document.getElementById('cantidad').value = "";
-        document.getElementById('precio').value = "";
-        document.getElementById('imagen').value = ""; // El input de tipo archivo no se puede limpiar completamente por razones de seguridad.
-        document.getElementById('proveedor').value = "";
     })
     .catch(function (error) {
         alert('Error al agregar producto.');
         console.error('Error', error);
     });
-});
+    .finally(function () {
+    document.getElementById('codigo').value = "";
+    document.getElementById('descripcion').value = "";
+    document.getElementById('cantidad').value = "";
+    document.getElementById('precio').value = "";
+    document.getElementById('imagen').value = "";
+    document.getElementById('proveedor').value = "";
+    });
+})
