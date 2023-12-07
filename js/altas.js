@@ -1,4 +1,4 @@
-const URL = "https://g13.pythonanywhere.com/";
+const URL = "https://g13.pythonanywhere.com";
 
 document.getElementById('formulario').addEventListener('submit', function (event) {
     event.preventDefault();
@@ -11,7 +11,7 @@ document.getElementById('formulario').addEventListener('submit', function (event
     formData.append('imagen', document.getElementById('imagen').files[0]);
     formData.append('proveedor', document.getElementById('proveedor').value);
 
-    fetch(URL + 'productos', {
+    fetch(URL + '/productos', {
     method: 'POST',
     body: formData
     })
