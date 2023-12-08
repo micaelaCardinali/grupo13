@@ -1,8 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
     const URL = "https://g13.pythonanywhere.com/";
     const rutaBaseImagen = "https://www.pythonanywhere.com/user/G13/files/home/G13/mysite/static/img/";
-    const cors = require("cors");
-    app.use(cors())
     
     fetch(URL + 'productos')
         .then(function (response) {
