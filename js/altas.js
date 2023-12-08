@@ -1,4 +1,4 @@
-const URL = "https://g13.pythonanywhere.com";
+let URL = "https://g13.pythonanywhere.com";
 
 document.getElementById('formulario').addEventListener('submit', function (event) {
     event.preventDefault();
@@ -8,8 +8,8 @@ document.getElementById('formulario').addEventListener('submit', function (event
     formData.append('descripcion', document.getElementById('descripcion').value);
     formData.append('cantidad', document.getElementById('cantidad').value);
     formData.append('precio', document.getElementById('precio').value);
-    formData.append('imagen', document.getElementById('imagenProducto').files[0]);
-    formData.append('proveedor', document.getElementById('proveedorProducto').value);
+    formData.append('imagen', document.getElementById('imagen').files[0]);
+    formData.append('proveedor', document.getElementById('proveedor').value);
 
     fetch(URL + '/productos', {
         method: 'POST',
@@ -34,7 +34,7 @@ document.getElementById('formulario').addEventListener('submit', function (event
             document.getElementById('descripcion').value = "";
             document.getElementById('cantidad').value = "";
             document.getElementById('precio').value = "";
-            document.getElementById('imagenProducto').value = ""; 
-            document.getElementById('proveedorProducto').value = "";  
+            document.getElementById('imagen').value = ""; 
+            document.getElementById('proveedor').value = "";  
         });
 })
