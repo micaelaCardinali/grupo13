@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
     const URL = "https://g13.pythonanywhere.com/";
     const rutaBaseImagen = "/user/G13/files/home/G13/mysite/static/img/";
-    
+
     fetch(URL + 'productos')
         .then(function (response) {
             if (response.ok) {
@@ -20,6 +20,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 methods: {
                     mostrarRutasEnConsola() {
                         for (let producto of this.productos) {
+                            // Utiliza rutas relativas o ajusta según la estructura de tu proyecto
                             const rutaCompleta = this.rutaBaseImagen + producto.imagen_url;
                             console.log('Ruta de la imagen:', rutaCompleta);
                         }
@@ -28,6 +29,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 template: `
                     <div class="cards-container">
                         <div v-for="producto in productos" :key="producto.codigo" class="product-card">
+                            <!-- Utiliza rutas relativas o ajusta según la estructura de tu proyecto -->
                             <img :src="rutaBaseImagen + producto.imagen_url" :alt="producto.descripcion" class="product-img">
                             <div class="product-info">
                                 <div>
